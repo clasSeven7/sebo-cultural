@@ -1,10 +1,11 @@
 package Domain.Entities;
 
-public class ItemEstoque {
+public class ItemEstoque extends Entidade {
     private ItemBiblioteca item;
     private int quantidade;
 
     public ItemEstoque(ItemBiblioteca item, int quantidade) {
+        super();
         this.setItem(item);
         this.setQuantidade(quantidade);
     }
@@ -28,7 +29,7 @@ public class ItemEstoque {
     @Override
     public String toString() {
         return "ItemEstoque{" +
-                "item=" + this.getItem() +
+                "item=" + this.getItem().toString() +
                 ", quantidade=" + this.getQuantidade() +
                 '}';
     }

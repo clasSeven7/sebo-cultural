@@ -1,9 +1,6 @@
 package Domain.Entities;
 
-import Shared.Utils.UniqueIdGenerator;
-
-public abstract class ItemBiblioteca {
-    private String id;
+public abstract class ItemBiblioteca extends Entidade {
     private String titulo;
     private String genero;
     private String autor;
@@ -12,7 +9,7 @@ public abstract class ItemBiblioteca {
     private TipoItemBiblioteca tipo;
 
     public ItemBiblioteca() {
-        this.id = UniqueIdGenerator.generate();
+        super();
     }
 
     public String getTitulo() {
@@ -29,10 +26,6 @@ public abstract class ItemBiblioteca {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
-
-    public String getId() {
-        return this.id;
     }
 
     public TipoItemBiblioteca getTipo() {

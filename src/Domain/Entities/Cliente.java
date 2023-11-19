@@ -4,12 +4,13 @@ public class Cliente extends Usuario {
     public Cliente(
             String nome,
             String email,
-            PermissaoUsuario permissao
+            Endereco endereco
     ) {
         super();
         this.setNome(nome);
         this.setEmail(email);
         this.setPermissao(PermissaoUsuario.CLIENTE);
+        this.setEndereco(endereco);
     }
 
     @Override
@@ -19,6 +20,7 @@ public class Cliente extends Usuario {
                 ", nome=" + this.getNome() +
                 ", email='" + this.getEmail() + '\'' +
                 ", permissao='" + this.getPermissao() + '\'' +
+                ", endereco='" + this.getEndereco().toString() + '\'' +
                 '}';
     }
 }

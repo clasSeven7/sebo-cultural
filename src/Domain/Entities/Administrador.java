@@ -4,12 +4,13 @@ public class Administrador extends Usuario {
     public Administrador(
             String nome,
             String email,
-            PermissaoUsuario permissao
+            Endereco endereco
     ) {
         super();
         this.setNome(nome);
         this.setEmail(email);
         this.setPermissao(PermissaoUsuario.ADMINISTRADOR);
+        this.setEndereco(endereco);
     }
 
     @Override
@@ -19,6 +20,7 @@ public class Administrador extends Usuario {
                 ", nome=" + this.getNome() +
                 ", email='" + this.getEmail() + '\'' +
                 ", permissao='" + this.getPermissao() + '\'' +
+                ", endereco='" + this.getEndereco().toString() + '\'' +
                 '}';
     }
 }

@@ -1,23 +1,18 @@
 package Domain.Entities;
 
-import Shared.Utils.UniqueIdGenerator;
-
-public abstract class Usuario {
-    private String id;
+public abstract class Usuario extends Entidade {
     private String nome;
     private String email;
     private PermissaoUsuario permissao;
 
-    public Usuario() {
-        this.id = UniqueIdGenerator.generate();
-    }
+    private Endereco endereco;
 
-    public String getId() {
-        return id;
+    public Usuario() {
+        super();
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -25,7 +20,7 @@ public abstract class Usuario {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -33,10 +28,18 @@ public abstract class Usuario {
     }
 
     public PermissaoUsuario getPermissao() {
-        return permissao;
+        return this.permissao;
     }
 
     public void setPermissao(PermissaoUsuario permissao) {
         this.permissao = permissao;
+    }
+
+    public Endereco getEndereco() {
+        return this.endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 }
