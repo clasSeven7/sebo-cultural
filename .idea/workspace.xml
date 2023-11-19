@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/ItemEstoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/ItemEstoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
