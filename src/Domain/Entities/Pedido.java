@@ -7,7 +7,7 @@ public class Pedido extends Entidade {
     private Date data;
     private String clienteId;
 
-    public Pedido() {}
+    public Pedido(String number, String date) {}
 
     public ItemEstoque getItemEstoque() {
         return this.itemEstoque;

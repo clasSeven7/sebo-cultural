@@ -1,6 +1,6 @@
 package Domain.Entities;
 
-public abstract class ItemBiblioteca extends Entidade {
+public class ItemBiblioteca extends Entidade {
     private String titulo;
     private String genero;
     private String autor;
@@ -8,21 +8,49 @@ public abstract class ItemBiblioteca extends Entidade {
     private String editora;
     private TipoItemBiblioteca tipo;
 
-    public ItemBiblioteca() {
+
+    /**
+     * Construtor da classe ItemBiblioteca.
+     *
+     * @param number Identificador único do item.
+     * @param novoLivro Título do item.
+     * @param novoAutor Autor do item.
+     * @param editora Editora do item.
+     */
+    public ItemBiblioteca(String number, String novoLivro, String novoAutor, String editora) {
         super();
     }
 
+
+    /**
+     * Obtém o título do item bibliotecário.
+     *
+     * @return O título do item.
+     */
     public String getTitulo() {
         return this.titulo;
     }
 
+    /**
+     * Define o título do item bibliotecário.
+     *
+     * @param titulo Novo título do item.
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    /**
+     * Obtém o gênero do item bibliotecário.
+     *
+     * @return O gênero do item.
+     */
+
     public String getGenero() {
         return this.genero;
     }
+
+
 
     public void setGenero(String genero) {
         this.genero = genero;

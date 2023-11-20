@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library-concept.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Entidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Entidade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +35,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Domain/Entities/Administrador.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Entities/Cliente.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Entities/Endereco.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Entities/Entidade.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/testes/AdministradorTest.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2YNCgu6XqnbV6PoUd8Pjiogvqph" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -52,12 +69,15 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15234375",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.AdministradorTest">
-    <configuration name="AdministradorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ItemBibliotecaTest">
+    <configuration name="EstoqueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
@@ -66,13 +86,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="testes.AdministradorTest" />
+      <option name="MAIN_CLASS_NAME" value="testes.EstoqueTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdministradorTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EstoqueTest.testAdicionarItemAoEstoque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
@@ -81,8 +101,55 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="testes.AdministradorTest" />
-      <option name="METHOD_NAME" value="testToString" />
+      <option name="MAIN_CLASS_NAME" value="testes.EstoqueTest" />
+      <option name="METHOD_NAME" value="testAdicionarItemAoEstoque" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemBibliotecaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library-concept" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testes" />
+      <option name="MAIN_CLASS_NAME" value="testes.ItemBibliotecaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemBibliotecaTest.testGetAutor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library-concept" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testes" />
+      <option name="MAIN_CLASS_NAME" value="testes.ItemBibliotecaTest" />
+      <option name="METHOD_NAME" value="testGetAutor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemBibliotecaTest.testGetTitulo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="library-concept" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testes" />
+      <option name="MAIN_CLASS_NAME" value="testes.ItemBibliotecaTest" />
+      <option name="METHOD_NAME" value="testGetTitulo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,8 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AdministradorTest" />
-        <item itemvalue="JUnit.AdministradorTest.testToString" />
+        <item itemvalue="JUnit.ItemBibliotecaTest" />
+        <item itemvalue="JUnit.ItemBibliotecaTest.testGetAutor" />
+        <item itemvalue="JUnit.ItemBibliotecaTest.testGetTitulo" />
+        <item itemvalue="JUnit.EstoqueTest.testAdicionarItemAoEstoque" />
+        <item itemvalue="JUnit.EstoqueTest" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +173,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700356770098</updated>
-      <workItem from="1700487534955" duration="3105000" />
+      <workItem from="1700487534955" duration="4896000" />
+      <workItem from="1700500931810" duration="7810000" />
     </task>
     <servers />
   </component>
