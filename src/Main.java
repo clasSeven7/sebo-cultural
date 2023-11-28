@@ -14,7 +14,5 @@ public class Main {
 
         IRevistaRepository revistaRepository = new RevistaRepository();
         IRevistaService revistaService = new RevistaService(revistaRepository);
-
-        //cli aqui...
     }
 }

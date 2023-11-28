@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Presentation/Cli/OpcaoCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library-concept.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" afterDir="false" />
@@ -12,7 +14,7 @@
       <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/EnderecoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/EnderecoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tests/EntidadeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/ItemBibliotecaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/ItemBibliotecaTest.java" beforeDir="false" />> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +30,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -53,6 +56,8 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  }
+}</component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
