@@ -17,7 +17,7 @@ public abstract class JSONRepository<T> {
 
     public JSONRepository(Class<T> entityType) {
         this.entityType = entityType;
-        this.ARQUIVO_JSON = DIRETORIO_DATABASE + "/" + entityType.getSimpleName() + ".json";
+        this.ARQUIVO_JSON = DIRETORIO_DATABASE + "/" + entityType.getSimpleName().toLowerCase() + ".json";
     }
 
     public ArrayList<T> buscarDoJson() {

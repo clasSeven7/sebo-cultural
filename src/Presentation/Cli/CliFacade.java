@@ -11,11 +11,9 @@ import java.util.Scanner;
 public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     private final ILivroService _livroService;
-    private final LivroService _itemEstoqueService;
 
-    public CliFacade(ILivroService livroService, LivroService itemEstoqueService) {
+    public CliFacade(ILivroService livroService) {
         _livroService = livroService;
-        _itemEstoqueService = itemEstoqueService;
     }
 
     public void mostrarMenu() {
@@ -238,7 +236,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
         Livro itemEstoque = new Livro(livro, quantidadeLivro, precoLivro);
 
-        this._itemEstoqueService.criar(itemEstoque);
+        // this._itemEstoqueService.criar(itemEstoque);
 
     }
 
