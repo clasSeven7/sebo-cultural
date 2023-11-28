@@ -1,4 +1,4 @@
-package Testes;
+package Tests;
 
 import Domain.Entities.ItemBiblioteca;
 import Domain.Entities.TipoItemBiblioteca;
