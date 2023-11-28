@@ -1,4 +1,4 @@
-package Tests;
+package Testes;
 
 import Domain.Entities.Endereco;
 import org.junit.Test;

@@ -83,12 +83,12 @@
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="Testes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AdministradorTest" />
+      <option name="MAIN_CLASS_NAME" value="Testes.AdministradorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -98,12 +98,12 @@
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="Testes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AdministradorTest" />
+      <option name="MAIN_CLASS_NAME" value="Testes.AdministradorTest" />
       <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -114,12 +114,12 @@
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="Testes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ItemBibliotecaTest" />
+      <option name="MAIN_CLASS_NAME" value="Testes.ItemBibliotecaTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,12 +129,12 @@
       <module name="library-concept" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="Testes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ItemBibliotecaTest" />
+      <option name="MAIN_CLASS_NAME" value="Testes.ItemBibliotecaTest" />
       <option name="METHOD_NAME" value="testGetAutor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
