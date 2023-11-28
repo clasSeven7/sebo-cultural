@@ -1,4 +1,5 @@
 import Domain.Entities.Livro;
+import Domain.Entities.Revista;
 import Domain.Repositories.IEstoqueRepository;
 import Domain.Repositories.ILivroRepository;
 import Domain.Repositories.IRevistaRepository;
@@ -57,16 +58,43 @@ public class Main {
                 "Shueisha - Shonnen Jump"
         );
 
+<<<<<<< HEAD
+=======
+
+        var r1 = new Revista(
+                "Forbes",
+                "Economia",
+                "-",
+                2023,
+                "Forbes"
+        );
+
+
+>>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
         livroService.criar(l1);
         livroService.criar(l2);
         livroService.criar(l3);
 
+        revistaService.criar(r1);
+
         var livros = livroService.buscar();
+        var revistas = revistaService.buscar();
 
         for (Livro livro:livros) {
             System.out.println(livro.toString());
         }
+<<<<<<< HEAD
 
+=======
+        
+        System.out.println("\n");
+
+        for (Revista revista:revistas) {
+            System.out.println(revista.toString());
+        }
+
+        var cli = new CliFacade(livroService);
+>>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
         cli.mostrarMenu();
     }
 }

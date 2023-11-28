@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fd2708c-5e77-4d07-896f-3a822b18592b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/saulojustiniano.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/saulojustiniano.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Contracts/IRevistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Contracts/IRevistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Services/RevistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/RevistaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +20,12 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Merging main",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <servers />
   </component>

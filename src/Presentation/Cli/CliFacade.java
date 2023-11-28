@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     private final ILivroService _livroService;
+<<<<<<< HEAD
     private final IRevistaService _revistaService;
     private final ILivroService _itemEstoqueService;
 
@@ -19,11 +20,23 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
         _livroService = livroService;
         _revistaService = revistaService;
         _itemEstoqueService = itemEstoqueService;
+=======
+
+    public CliFacade(ILivroService livroService) {
+        _livroService = livroService;
+    }
+
+    private void mostrarTitulo() {
+        System.out.println();
+        System.out.println("\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFB\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B \uD83C\uDDF8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF4\u200B\u200B\u200B\u200B\u200B \uD83C\uDDE8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF9\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B");
+        System.out.println();
+        System.out.println("Ⓢⓔⓙⓐ ⓑⓔⓜ ⓥⓘⓝⓓⓞ");
+        System.out.println();
+>>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
     }
 
     public void mostrarMenu() {
-        System.out.println("<------- Bem vindo ao sistema de livraria! ------->");
-        System.out.println();
+        this.mostrarTitulo();
         System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - administrador");
         System.out.println("[2] - cliente");
@@ -241,7 +254,12 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
         Livro itemEstoque = new Livro(livro, quantidadeLivro, precoLivro);
 
+<<<<<<< HEAD
         this._itemEstoqueService.criar(itemEstoque);
+=======
+        // this._itemEstoqueService.criar(itemEstoque);
+
+>>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
     }
 
     @Override
