@@ -7,7 +7,7 @@ import Domain.Services.Contracts.ILivroService;
 import java.util.ArrayList;
 
 public class LivroService implements ILivroService {
-    private ILivroRepository _livroRepository;
+    private final ILivroRepository _livroRepository;
 
     public LivroService(ILivroRepository livroRepository) {
         this._livroRepository = livroRepository;
@@ -17,7 +17,7 @@ public class LivroService implements ILivroService {
         try {
             return this._livroRepository.buscar();
         } catch (Exception e) {
-            System.out.println("Nao foi possivel obter dados de livros...");
+            System.out.println("Nao foi possível obter dados de livros...");
             return new ArrayList<>();
         }
     }
@@ -26,25 +26,23 @@ public class LivroService implements ILivroService {
         try {
             this._livroRepository.criar(livro);
         } catch (Exception e) {
-            System.out.println("Nao foi possivel criar livro...");
+            System.out.println("Nao foi possível criar livro...");
         }
     }
-
 
     public void atualizar(String livroId, Livro livro) {
         try {
             this._livroRepository.atualizar(livroId, livro);
         } catch (Exception e) {
-            System.out.println("Nao foi possivel atualizar livro...");
+            System.out.println("Não foi possível atualizar livro...");
         }
     }
-
 
     public void deletar(String livroId) {
         try {
             this._livroRepository.deletar(livroId);
         } catch (Exception e) {
-            System.out.println("Nao foi possivel deletar livro...");
+            System.out.println("Não foi possível deletar livro...");
         }
     }
 }

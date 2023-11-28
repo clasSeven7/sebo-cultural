@@ -8,9 +8,12 @@ import Domain.Services.Contracts.IRevistaService;
 import Domain.Services.EstoqueService;
 import Domain.Services.LivroService;
 import Domain.Services.RevistaService;
+
 import Infrastructure.EstoqueRepository;
 import Infrastructure.LivroRepository;
 import Infrastructure.RevistaRepository;
+
+import Presentation.Cli.CliFacade;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,10 +26,6 @@ public class Main {
         IEstoqueRepository estoqueRepository = new EstoqueRepository();
         IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
 
-
-        //cli aqui...
-
-
         //Testes hard code para entidades
         var l = new Livro(
                 "One Piece",
@@ -37,5 +36,7 @@ public class Main {
         );
 
         livroService.criar(l);
+        var cli = new CliFacade(livroService, itemEstoqueService);
+        cli.mostrarMenu();
     }
 }

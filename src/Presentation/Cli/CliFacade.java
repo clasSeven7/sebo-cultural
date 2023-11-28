@@ -3,10 +3,20 @@ package Presentation.Cli;
 import Domain.Entities.Cliente;
 import Domain.Entities.Endereco;
 import Domain.Entities.Livro;
+import Domain.Services.Contracts.ILivroService;
+import Domain.Services.LivroService;
 
 import java.util.Scanner;
 
-public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
+public class CliFacade implements OpcaoAdmin, OpcaoCliente {
+
+    private final ILivroService _livroService;
+    private final LivroService _itemEstoqueService;
+
+    public CliFacade(ILivroService livroService, LivroService itemEstoqueService) {
+        _livroService = livroService;
+        _itemEstoqueService = itemEstoqueService;
+    }
 
     public void mostrarMenu() {
         System.out.println("<------- Bem vindo ao sistema de livraria! ------->");
@@ -216,7 +226,9 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
         Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
 
-//        livroService.criar(livro);
+        System.out.println("=====================================");
+
+        this._livroService.criar(livro);
 
         System.out.println("Quantidade de livros no estoque:");
         int quantidadeLivro = inputAdicionarLivro.nextInt();
@@ -224,9 +236,9 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
         System.out.println("Preço do livro:");
         double precoLivro = inputAdicionarLivro.nextDouble();
 
-//        ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
+        Livro itemEstoque = new Livro(livro, quantidadeLivro, precoLivro);
 
-//        ItemEstoqueService.criar(itemEstoque);
+        this._itemEstoqueService.criar(itemEstoque);
 
     }
 

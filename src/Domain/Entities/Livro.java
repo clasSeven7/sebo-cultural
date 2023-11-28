@@ -16,6 +16,9 @@ public class Livro extends ItemBiblioteca {
         this.setEditora(editora);
     }
 
+    public Livro(Livro livro, int quantidadeLivro, double precoLivro) {
+    }
+
     @Override
     public String toString() {
         return "Livro{" +
