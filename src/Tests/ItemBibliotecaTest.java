@@ -1,4 +1,4 @@
-package testes;
+package Tests;
 
 import Domain.Entities.ItemBiblioteca;
 import Domain.Entities.TipoItemBiblioteca;
@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ItemBibliotecaTest extends EntidadeTest {
-
-
     @Test
     public void testSetTitulo() {
         ItemBiblioteca item = new ItemBiblioteca("123", "Livro Teste", "Autor Teste", "Editora Teste");
@@ -35,15 +33,12 @@ public class ItemBibliotecaTest extends EntidadeTest {
         assertEquals(2020, item.getAnoPublicacao());
     }
 
-
     @org.junit.Test
     public void testGetEditora() {
         ItemBiblioteca item = new ItemBiblioteca("123", "Livro Teste", "Autor Teste", "Editora Teste");
         item.setEditora("Nova Editora");
         assertEquals("Nova Editora", item.getEditora());
     }
-
-
 
     @Test
     public void testTipoItemBiblioteca() {

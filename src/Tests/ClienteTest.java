@@ -1,4 +1,4 @@
-package testes;
+package Tests;
 
 import Domain.Entities.Cliente;
 import Domain.Entities.Endereco;

@@ -1,7 +1,6 @@
-package testes;
+package Tests;
 
 import Domain.Entities.Entidade;
-import Shared.Utils.UniqueIdGenerator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
