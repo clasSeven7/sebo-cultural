@@ -3,18 +3,21 @@ package Presentation.Cli;
 import Domain.Entities.Cliente;
 import Domain.Entities.Endereco;
 import Domain.Entities.Livro;
+import Domain.Services.Contracts.IEstoqueService;
 import Domain.Services.Contracts.ILivroService;
-import Domain.Services.LivroService;
+import Domain.Services.Contracts.IRevistaService;
 
 import java.util.Scanner;
 
 public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     private final ILivroService _livroService;
-    private final LivroService _itemEstoqueService;
+    private final IRevistaService _revistaService;
+    private final ILivroService _itemEstoqueService;
 
-    public CliFacade(ILivroService livroService, LivroService itemEstoqueService) {
+    public CliFacade(ILivroService livroService, IRevistaService revistaService, ILivroService itemEstoqueService, IEstoqueService estoqueService) {
         _livroService = livroService;
+        _revistaService = revistaService;
         _itemEstoqueService = itemEstoqueService;
     }
 
@@ -239,7 +242,6 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
         Livro itemEstoque = new Livro(livro, quantidadeLivro, precoLivro);
 
         this._itemEstoqueService.criar(itemEstoque);
-
     }
 
     @Override
@@ -271,6 +273,20 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
         System.out.println("Adicionando revista...");
 
         Livro revista = new Livro(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
+
+        System.out.println("=====================================");
+
+        this._revistaService.criar(revista);
+
+        System.out.println("Quantidade de revistas no estoque:");
+        int quantidadeRevista = inputAdicionarRevista.nextInt();
+
+        System.out.println("Preço da revista:");
+        double precoRevista = inputAdicionarRevista.nextDouble();
+
+        Livro itemEstoque = new Livro(revista, quantidadeRevista, precoRevista);
+
+        this._itemEstoqueService.criar(itemEstoque);
 
     }
 

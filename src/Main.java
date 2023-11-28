@@ -16,15 +16,21 @@ import Infrastructure.RevistaRepository;
 import Presentation.Cli.CliFacade;
 
 public class Main {
-    public static void main(String[] args) {
+
+    public static void main(String[] args, ILivroService estoqueService) {
         ILivroRepository livroRepository = new LivroRepository();
         ILivroService livroService = new LivroService(livroRepository);
 
         IRevistaRepository revistaRepository = new RevistaRepository();
         IRevistaService revistaService = new RevistaService(revistaRepository);
 
-        IEstoqueRepository estoqueRepository = new EstoqueRepository();
-        IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
+//        IEstoqueRepository estoqueRepository = new EstoqueRepository();
+//        IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
+
+        IEstoqueRepository itemEstoqueRepository = new EstoqueRepository();
+        IEstoqueService itemEstoqueService = new EstoqueService(itemEstoqueRepository);
+
+        var cli = new CliFacade(livroService, revistaService, estoqueService, itemEstoqueService);
 
         //Testes hard code para entidades
         var l1 = new Livro(
@@ -51,8 +57,6 @@ public class Main {
                 "Shueisha - Shonnen Jump"
         );
 
-        var cli = new CliFacade(livroService, itemEstoqueService);
-
         livroService.criar(l1);
         livroService.criar(l2);
         livroService.criar(l3);
@@ -62,6 +66,7 @@ public class Main {
         for (Livro livro:livros) {
             System.out.println(livro.toString());
         }
+
         cli.mostrarMenu();
     }
 }

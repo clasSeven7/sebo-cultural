@@ -1,5 +1,6 @@
 package Domain.Services;
 
+import Domain.Entities.Livro;
 import Domain.Entities.Revista;
 import Domain.Repositories.IRevistaRepository;
 import Domain.Services.Contracts.IRevistaService;
@@ -22,7 +23,7 @@ public class RevistaService implements IRevistaService {
         }
     }
 
-    public void criar(Revista revista) {
+    public void criar(Livro revista) {
         try {
             this._revistaRepository.criar(revista);
         } catch (Exception e) {
