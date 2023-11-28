@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface IRevistaService {
     ArrayList<Revista> buscar();
-    void criar(Livro revista);
+    void criar(Revista revista);
     void atualizar(String revistaId, Revista revista);
     void deletar(String revistaId);
 }

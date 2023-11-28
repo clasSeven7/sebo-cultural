@@ -18,12 +18,12 @@ public class RevistaService implements IRevistaService {
         try {
             return this._revistaRepository.buscar();
         } catch (Exception e) {
-            System.out.println("Não foi possível obter dados de livros...");
+            System.out.println("Não foi possível obter dados de revista...");
             return new ArrayList<>();
         }
     }
 
-    public void criar(Livro revista) {
+    public void criar(Revista revista) {
         try {
             this._revistaRepository.criar(revista);
         } catch (Exception e) {

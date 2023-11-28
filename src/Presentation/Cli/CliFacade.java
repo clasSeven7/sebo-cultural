@@ -1,42 +1,51 @@
 package Presentation.Cli;
 
-import Domain.Entities.Cliente;
-import Domain.Entities.Endereco;
-import Domain.Entities.Livro;
+import Domain.Entities.*;
 import Domain.Services.Contracts.IEstoqueService;
 import Domain.Services.Contracts.ILivroService;
 import Domain.Services.Contracts.IRevistaService;
+import Shared.Utils.ConsoleHandler;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CliFacade implements OpcaoAdmin, OpcaoCliente {
-
+public class CliFacade {
     private final ILivroService _livroService;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
     private final IRevistaService _revistaService;
-    private final ILivroService _itemEstoqueService;
-
-    public CliFacade(ILivroService livroService, IRevistaService revistaService, ILivroService itemEstoqueService, IEstoqueService estoqueService) {
-        _livroService = livroService;
-        _revistaService = revistaService;
-        _itemEstoqueService = itemEstoqueService;
-=======
-
-    public CliFacade(ILivroService livroService) {
-        _livroService = livroService;
-=======
-    private final ILivroService _itemEstoqueService;
     private final IEstoqueService _estoqueService;
-    private final IRevistaService _revistaService;
 
-    public CliFacade(ILivroService livroService, IRevistaService revistaService, IEstoqueService estoqueService, ILivroService itemEstoqueService) {
-        _livroService = livroService;
-        _revistaService = revistaService;
-        _estoqueService = estoqueService;
-        _itemEstoqueService = itemEstoqueService;
+    public CliFacade(ILivroService livroService, IRevistaService revistaService, IEstoqueService estoqueService) {
+        this._livroService = livroService;
+        this._revistaService = revistaService;
+        this._estoqueService = estoqueService;
+    }
 
->>>>>>> Stashed changes
+    public void mostrarMenu() {
+        ConsoleHandler.clearConsole();
+        this.mostrarCabecalhoInicial();
+        Scanner inputMenu = new Scanner(System.in);
+        System.out.print(">>> ");
+
+        int opcaoMenu = inputMenu.nextInt();
+
+        while (opcaoMenu != 3) {
+            switch (opcaoMenu) {
+                case 1 -> mostrarMenuAdmin();
+                case 2 -> mostrarMenuCliente();
+                case 3 -> System.out.println("Saindo...");
+                default -> System.out.println("Opcao invalida!");
+            }
+        }
+
+    }
+
+    private void mostrarCabecalhoInicial() {
+        this.mostrarTitulo();
+        System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
+        System.out.println("[1] - administrador");
+        System.out.println("[2] - cliente");
+        System.out.println("[3] - sair");
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
 
     private void mostrarTitulo() {
@@ -45,36 +54,16 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
         System.out.println();
         System.out.println("Ⓢⓔⓙⓐ ⓑⓔⓜ ⓥⓘⓝⓓⓞ");
         System.out.println();
->>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
     }
 
-    public void mostrarMenu() {
-        this.mostrarTitulo();
-        System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
-        System.out.println("[1] - administrador");
-        System.out.println("[2] - cliente");
-        System.out.println("[3] - sair");
-        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-
-        Scanner inputMenu = new Scanner(System.in);
-        System.out.print(">>> ");
-        int opcaoMenu = inputMenu.nextInt();
-
-        switch (opcaoMenu) {
-            case 1 -> mostrarMenuAdmin();
-            case 2 -> mostrarMenuCliente();
-            case 3 -> System.out.println("Saindo...");
-        }
-    }
-
-    public void mostrarMenuAdmin() {
+    private void mostrarMenuAdmin() {
+        ConsoleHandler.clearConsole();
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Menu do administrador =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - excluir");
         System.out.println("[2] - adicionar");
         System.out.println("[3] - cliente");
         System.out.println("[4] - voltar");
-        System.out.println("[5] - sair");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
         Scanner inputAdmin = new Scanner(System.in);
@@ -144,20 +133,109 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
             }
             case 4 -> {
                 System.out.println("Voltando...");
-                mostrarMenu();
+                this.mostrarMenu();
             }
-            case 5 -> System.out.println("Saindo...");
         }
     }
 
-    public void mostrarMenuCliente() {
+    private void excluirLivro() {
+
+    }
+
+    private void excluirRevista() {
+
+    }
+
+    // ============== AREA DO ADMINISTRADOR ====================
+
+    private void adicionarLivro() {
+        Scanner inputAdicionarLivro = new Scanner(System.in);
+
+        System.out.println("=-=-=-=-=-=-=-= Adicionar livro =-=-=-=-=-=-=-=-=");
+
+        System.out.println("Digite o título do livro: ");
+        String tituloLivro = inputAdicionarLivro.nextLine();
+
+        System.out.println("Digite o gênero do livro: ");
+        String generoLivro = inputAdicionarLivro.nextLine();
+
+        System.out.println("Digite o autor do livro: ");
+        String autorLivro = inputAdicionarLivro.nextLine();
+
+        System.out.println("Digite o ano de publicação do livro: ");
+        int anoPublicacaoLivro = inputAdicionarLivro.nextInt();
+
+        System.out.println("Digite a editora do livro: ");
+        String editoraLivro = inputAdicionarLivro.nextLine();
+
+        Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
+
+        System.out.println("=====================================");
+
+        this._livroService.criar(livro);
+
+        System.out.println("Quantidade de livros no estoque:");
+        int quantidadeLivro = inputAdicionarLivro.nextInt();
+
+        System.out.println("Preço do livro:");
+        double precoLivro = inputAdicionarLivro.nextDouble();
+
+        ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
+        ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
+        itemsEstoque.add(itemEstoque);
+        this._estoqueService.salvar(itemsEstoque);
+        System.out.println("O Livro foi Adicionado com sucesso!");
+    }
+
+    private void adicionarRevista() {
+        Scanner inputAdicionarRevista = new Scanner(System.in);
+
+        System.out.println("=-=-=-=-=-=-=-= Adicionar revista =-=-=-=-=-=-=-=-=");
+
+        System.out.println("Digite o título da revista: ");
+        String tituloRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o gênero da revista: ");
+        String generoRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o autor da revista: ");
+        String autorRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o ano de publicação da revista: ");
+        int anoPublicacaoRevista = inputAdicionarRevista.nextInt();
+
+        System.out.println("Digite a editora da revista: ");
+        String editoraRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Adicionando revista...");
+
+        Revista revista = new Revista(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
+
+        System.out.println("=====================================");
+
+        this._revistaService.criar(revista);
+
+        System.out.println("Quantidade de revistas no estoque:");
+        int quantidadeRevista = inputAdicionarRevista.nextInt();
+
+        System.out.println("Preço da revista:");
+        double precoRevista = inputAdicionarRevista.nextDouble();
+
+        ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
+        ItemEstoque itemEstoque = new ItemEstoque(revista, quantidadeRevista, precoRevista);
+        itemsEstoque.add(itemEstoque);
+        this._estoqueService.salvar(itemsEstoque);
+        System.out.println("A Revista foi Adicionada com sucesso!");
+    }
+
+    private void mostrarMenuCliente() {
+        ConsoleHandler.clearConsole();
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Menu do cliente =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - comprar");
         System.out.println("[2] - favoritar");
         System.out.println("[3] - vender");
         System.out.println("[4] - voltar");
-        System.out.println("[5] - sair");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
         Scanner inputCliente = new Scanner(System.in);
@@ -226,111 +304,10 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
                 System.out.println("Voltando...");
                 mostrarMenu();
             }
-            case 5 -> System.out.println("Saindo...");
         }
     }
 
-    // ============== AREA DO ADMINISTRADOR ====================
-
-    @Override
-    public void adicionarLivro() {
-        Scanner inputAdicionarLivro = new Scanner(System.in);
-
-        System.out.println("=-=-=-=-=-=-=-= Adicionar livro =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o título do livro: ");
-        String tituloLivro = inputAdicionarLivro.nextLine();
-
-        System.out.println("Digite o gênero do livro: ");
-        String generoLivro = inputAdicionarLivro.nextLine();
-
-        System.out.println("Digite o autor do livro: ");
-        String autorLivro = inputAdicionarLivro.nextLine();
-
-        System.out.println("Digite o ano de publicação do livro: ");
-        int anoPublicacaoLivro = inputAdicionarLivro.nextInt();
-
-        System.out.println("Digite a editora do livro: ");
-        String editoraLivro = inputAdicionarLivro.nextLine();
-
-        Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
-
-        System.out.println("=====================================");
-
-        this._livroService.criar(livro);
-
-        System.out.println("Quantidade de livros no estoque:");
-        int quantidadeLivro = inputAdicionarLivro.nextInt();
-
-        System.out.println("Preço do livro:");
-        double precoLivro = inputAdicionarLivro.nextDouble();
-
-        Livro itemEstoque = new Livro(livro, quantidadeLivro, precoLivro);
-
-<<<<<<< HEAD
-        this._itemEstoqueService.criar(itemEstoque);
-<<<<<<< Updated upstream
-=======
-        // this._itemEstoqueService.criar(itemEstoque);
-
->>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
-=======
->>>>>>> Stashed changes
-    }
-
-    @Override
-    public void excluirLivro() {
-
-    }
-
-    @Override
-    public void adicionarRevista() {
-        Scanner inputAdicionarRevista = new Scanner(System.in);
-
-        System.out.println("=-=-=-=-=-=-=-= Adicionar revista =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o título da revista: ");
-        String tituloRevista = inputAdicionarRevista.nextLine();
-
-        System.out.println("Digite o gênero da revista: ");
-        String generoRevista = inputAdicionarRevista.nextLine();
-
-        System.out.println("Digite o autor da revista: ");
-        String autorRevista = inputAdicionarRevista.nextLine();
-
-        System.out.println("Digite o ano de publicação da revista: ");
-        int anoPublicacaoRevista = inputAdicionarRevista.nextInt();
-
-        System.out.println("Digite a editora da revista: ");
-        String editoraRevista = inputAdicionarRevista.nextLine();
-
-        System.out.println("Adicionando revista...");
-
-        Livro revista = new Livro(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
-
-        System.out.println("=====================================");
-
-        this._revistaService.criar(revista);
-
-        System.out.println("Quantidade de revistas no estoque:");
-        int quantidadeRevista = inputAdicionarRevista.nextInt();
-
-        System.out.println("Preço da revista:");
-        double precoRevista = inputAdicionarRevista.nextDouble();
-
-        Livro itemEstoque = new Livro(revista, quantidadeRevista, precoRevista);
-
-        this._itemEstoqueService.criar(itemEstoque);
-
-    }
-
-    @Override
-    public void excluirRevista() {
-
-    }
-
-    @Override
-    public void adicionarCliente() {
+    private void adicionarCliente() {
         Scanner inputAdicionarCliente = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar cliente =-=-=-=-=-=-=-=-=");
@@ -366,15 +343,13 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     }
 
-    @Override
-    public void excluirCliente() {
+    private void excluirCliente() {
 
     }
 
     // =================== AREA DO CLIENTE ===========================
 
-    @Override
-    public void comprarLivro() {
+    private void comprarLivro() {
         Scanner inputComprar = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de livros ----------->");
@@ -393,8 +368,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     }
 
-    @Override
-    public void venderLivro() {
+    private void venderLivro() {
         System.out.println("<----------- Seus catálogos de livros ----------->");
         // service - listar dos os livros
         System.out.println();
@@ -406,8 +380,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
         System.out.println("Livro vendido!");
     }
 
-    @Override
-    public void favoritarLivro() {
+    private void favoritarLivro() {
         System.out.println("<----------- Seus catálogos de livros ----------->");
         // Service - listar todos os livros adiconados pelo ADM
         System.out.println();
@@ -424,8 +397,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     }
 
-    @Override
-    public void comprarRevista() {
+    private void comprarRevista() {
         System.out.println("<----------- Catálogo de revistas ----------->");
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Comprar revista =-=-=-=-=-=-=-=-=");
@@ -437,8 +409,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     }
 
-    @Override
-    public void venderRevista() {
+    private void venderRevista() {
         System.out.println("<----------- Seus catálogos de revistas ----------->");
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Vender revista =-=-=-=-=-=-=-=-=");
@@ -450,8 +421,7 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     }
 
-    @Override
-    public void favoritarRevista() {
+    private void favoritarRevista() {
         System.out.println("<----------- Seus catálogos de revistas ----------->");
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Favoritar revista =-=-=-=-=-=-=-=-=");
