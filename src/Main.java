@@ -27,7 +27,7 @@ public class Main {
         IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
 
         //Testes hard code para entidades
-        var l = new Livro(
+        var l1 = new Livro(
                 "One Piece",
                 "Manga / Shonnen",
                 "Eiichiro Oda",
@@ -35,8 +35,33 @@ public class Main {
                 "Shueisha - Shonnen Jump"
         );
 
-        livroService.criar(l);
+        var l2 = new Livro(
+                "Naruto",
+                "Manga / Shonnen",
+                "Masashi Kishimoto",
+                1999,
+                "Shueisha - Shonnen Jump"
+        );
+
+        var l3 = new Livro(
+                "Bleach",
+                "Manga / Shonnen",
+                "Tite Kubo",
+                2000,
+                "Shueisha - Shonnen Jump"
+        );
+
         var cli = new CliFacade(livroService, itemEstoqueService);
+
+        livroService.criar(l1);
+        livroService.criar(l2);
+        livroService.criar(l3);
+
+        var livros = livroService.buscar();
+
+        for (Livro livro:livros) {
+            System.out.println(livro.toString());
+        }
         cli.mostrarMenu();
     }
 }
