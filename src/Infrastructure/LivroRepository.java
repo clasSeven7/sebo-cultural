@@ -34,8 +34,8 @@ public class LivroRepository extends JSONRepository<Livro> implements ILivroRepo
     @Override
     protected Livro criarInstanciaAPartirDoJson(JSONObject jsonObject) {
         return new Livro(
-                jsonObject.getString("id"),
                 jsonObject.getString("titulo"),
+                jsonObject.getString("genero"),
                 jsonObject.getString("autor"),
                 jsonObject.getInt("anoPublicacao"),
                 jsonObject.getString("editora")
@@ -45,8 +45,8 @@ public class LivroRepository extends JSONRepository<Livro> implements ILivroRepo
     @Override
     protected JSONObject criarJsonAPartirDaInstancia(Livro entidade) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("id", entidade.getId());
         jsonObject.put("titulo", entidade.getTitulo());
+        jsonObject.put("genero", entidade.getGenero());
         jsonObject.put("autor", entidade.getAutor());
         jsonObject.put("anoPublicacao", entidade.getAnoPublicacao());
         jsonObject.put("editora", entidade.getEditora());
