@@ -8,7 +8,6 @@ public class Livro extends ItemBiblioteca {
             int anoPublicacao,
             String editora
     ) {
-        super();
         this.setTipo(TipoItemBiblioteca.LIVRO);
         this.setTitulo(titulo);
         this.setGenero(genero);

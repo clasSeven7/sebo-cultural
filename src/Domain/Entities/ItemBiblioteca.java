@@ -8,21 +8,41 @@ public abstract class ItemBiblioteca extends Entidade {
     private String editora;
     private TipoItemBiblioteca tipo;
 
+
     public ItemBiblioteca() {
         super();
     }
 
+
+    /**
+     * Obtém o título do item bibliotecário.
+     *
+     * @return O título do item.
+     */
     public String getTitulo() {
         return this.titulo;
     }
 
+    /**
+     * Define o título do item bibliotecário.
+     *
+     * @param titulo Novo título do item.
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    /**
+     * Obtém o gênero do item bibliotecário.
+     *
+     * @return O gênero do item.
+     */
+
     public String getGenero() {
         return this.genero;
     }
+
+
 
     public void setGenero(String genero) {
         this.genero = genero;

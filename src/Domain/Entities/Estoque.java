@@ -28,3 +28,4 @@ public class Estoque {
                 .anyMatch(itemEstoque -> Objects.equals(itemEstoque.getItem().getId(), itemBiblioteca.getId()));
     }
 }
+

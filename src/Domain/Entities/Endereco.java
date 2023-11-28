@@ -7,6 +7,16 @@ public class Endereco {
     private String cep;
     private String pais;
 
+
+    /**
+     * Construtor para criar uma instância de {@code Endereco} com as informações fornecidas.
+     *
+     * @param rua    O nome da rua.
+     * @param cidade A cidade.
+     * @param estado O estado.
+     * @param cep    O CEP (Código de Endereçamento Postal).
+     * @param pais   O país.
+     */
     public Endereco(
             String rua,
             String cidade,
@@ -20,6 +30,9 @@ public class Endereco {
         this.setCep(cep);
         this.setPais(pais);
     }
+
+
+
 
     public String getRua() {
         return this.rua;
@@ -60,6 +73,12 @@ public class Endereco {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    /**
+     * Retorna uma representação em formato de string do objeto {@code Endereco}.
+     *
+     * @return Uma string que representa o endereço, incluindo rua, cidade, estado, CEP e país.
+     */
 
     @Override
     public String toString() {
