@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     private final ILivroService _livroService;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     private final IRevistaService _revistaService;
     private final ILivroService _itemEstoqueService;
@@ -24,6 +25,18 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
     public CliFacade(ILivroService livroService) {
         _livroService = livroService;
+=======
+    private final ILivroService _itemEstoqueService;
+    private final IEstoqueService _estoqueService;
+    private final IRevistaService _revistaService;
+
+    public CliFacade(ILivroService livroService, IRevistaService revistaService, IEstoqueService estoqueService, ILivroService itemEstoqueService) {
+        _livroService = livroService;
+        _revistaService = revistaService;
+        _estoqueService = estoqueService;
+        _itemEstoqueService = itemEstoqueService;
+
+>>>>>>> Stashed changes
     }
 
     private void mostrarTitulo() {
@@ -256,10 +269,13 @@ public class CliFacade implements OpcaoAdmin, OpcaoCliente {
 
 <<<<<<< HEAD
         this._itemEstoqueService.criar(itemEstoque);
+<<<<<<< Updated upstream
 =======
         // this._itemEstoqueService.criar(itemEstoque);
 
 >>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
+=======
+>>>>>>> Stashed changes
     }
 
     @Override

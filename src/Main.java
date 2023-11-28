@@ -18,16 +18,26 @@ import Presentation.Cli.CliFacade;
 
 public class Main {
 
+<<<<<<< Updated upstream
     public static void main(String[] args, ILivroService estoqueService) {
+=======
+    public static void main(String[] args) {
+>>>>>>> Stashed changes
         ILivroRepository livroRepository = new LivroRepository();
         ILivroService livroService = new LivroService(livroRepository);
 
         IRevistaRepository revistaRepository = new RevistaRepository();
         IRevistaService revistaService = new RevistaService(revistaRepository);
 
+<<<<<<< Updated upstream
 //        IEstoqueRepository estoqueRepository = new EstoqueRepository();
 //        IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
 
+=======
+        IEstoqueRepository estoqueRepository = new EstoqueRepository();
+        IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
+        
+>>>>>>> Stashed changes
         IEstoqueRepository itemEstoqueRepository = new EstoqueRepository();
         IEstoqueService itemEstoqueService = new EstoqueService(itemEstoqueRepository);
 
@@ -58,6 +68,7 @@ public class Main {
                 "Shueisha - Shonnen Jump"
         );
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 
@@ -71,6 +82,8 @@ public class Main {
 
 
 >>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
+=======
+>>>>>>> Stashed changes
         livroService.criar(l1);
         livroService.criar(l2);
         livroService.criar(l3);
@@ -83,6 +96,7 @@ public class Main {
         for (Livro livro:livros) {
             System.out.println(livro.toString());
         }
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
 =======
@@ -95,6 +109,9 @@ public class Main {
 
         var cli = new CliFacade(livroService);
 >>>>>>> 8c3162a15a868adce0b632afcaaa20164a02b4fa
+=======
+
+>>>>>>> Stashed changes
         cli.mostrarMenu();
     }
 }
