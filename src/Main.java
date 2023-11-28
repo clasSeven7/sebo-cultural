@@ -1,3 +1,4 @@
+import Domain.Entities.Livro;
 import Domain.Repositories.IEstoqueRepository;
 import Domain.Repositories.ILivroRepository;
 import Domain.Repositories.IRevistaRepository;
@@ -24,5 +25,17 @@ public class Main {
 
 
         //cli aqui...
+
+
+        //Testes hard code para entidades
+        var l = new Livro(
+                "One Piece",
+                "Manga / Shonnen",
+                "Eiichiro Oda",
+                1997,
+                "Shueisha - Shonnen Jump"
+        );
+
+        livroService.criar(l);
     }
 }

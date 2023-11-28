@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Presentation/Cli/OpcaoCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/library-concept.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/EnderecoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/EnderecoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/EntidadeTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/ItemBibliotecaTest.java" beforeDir="false" />> main
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/EstoqueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/EstoqueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,31 +49,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  }
-}</component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/charlesoliveira/Desktop/sebo-cultural",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15234375",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="library-concept" />
@@ -90,100 +63,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdministradorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library-concept" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AdministradorTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AdministradorTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library-concept" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AdministradorTest" />
-      <option name="METHOD_NAME" value="testToString" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemBibliotecaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library-concept" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ItemBibliotecaTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemBibliotecaTest.testGetAutor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="library-concept" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testes" />
-      <option name="MAIN_CLASS_NAME" value="Tests.ItemBibliotecaTest" />
-      <option name="METHOD_NAME" value="testGetAutor" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AdministradorTest" />
-        <item itemvalue="JUnit.ItemBibliotecaTest" />
-        <item itemvalue="JUnit.AdministradorTest.testToString" />
-        <item itemvalue="JUnit.ItemBibliotecaTest.testGetAutor" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="" />
-      <created>1700356770098</created>
+      <changelist id="2bb60f80-2b22-4cb5-9095-eb35bae887da" name="Changes" comment="" />
+      <created>1701196978977</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1700356770098</updated>
-      <workItem from="1700487534955" duration="4896000" />
-      <workItem from="1700500931810" duration="7810000" />
-      <workItem from="1700524510539" duration="1610000" />
-      <workItem from="1700603250850" duration="539000" />
-      <workItem from="1701126907290" duration="154000" />
-      <workItem from="1701127083741" duration="850000" />
+      <updated>1701196978977</updated>
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Infrastructure/LivroRepository.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Infrastructure/JSONRepository.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

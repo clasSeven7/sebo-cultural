@@ -216,7 +216,7 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
         Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
 
-        livroService.criar(livro);
+//        livroService.criar(livro);
 
         System.out.println("Quantidade de livros no estoque:");
         int quantidadeLivro = inputAdicionarLivro.nextInt();
@@ -224,9 +224,9 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
         System.out.println("Preço do livro:");
         double precoLivro = inputAdicionarLivro.nextDouble();
 
-        ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
+//        ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
 
-        ItemEstoqueService.criar(itemEstoque);
+//        ItemEstoqueService.criar(itemEstoque);
 
     }
 
