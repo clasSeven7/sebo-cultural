@@ -1,6 +1,6 @@
 package Domain.Entities;
 
-public class ItemBiblioteca extends Entidade {
+public abstract class ItemBiblioteca extends Entidade {
     private String titulo;
     private String genero;
     private String autor;
@@ -9,15 +9,7 @@ public class ItemBiblioteca extends Entidade {
     private TipoItemBiblioteca tipo;
 
 
-    /**
-     * Construtor da classe ItemBiblioteca.
-     *
-     * @param number Identificador único do item.
-     * @param novoLivro Título do item.
-     * @param novoAutor Autor do item.
-     * @param editora Editora do item.
-     */
-    public ItemBiblioteca(String number, String novoLivro, String novoAutor, String editora) {
+    public ItemBiblioteca() {
         super();
     }
 
