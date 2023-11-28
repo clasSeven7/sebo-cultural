@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/src/Testes/EnderecoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/EnderecoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Testes/EntidadeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/EntidadeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Testes/ItemBibliotecaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/ItemBibliotecaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
