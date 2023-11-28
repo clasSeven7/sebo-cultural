@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public abstract class JSONRepository<T> {
-    public static final String DIRETORIO_DATABASE = "Database";
+    public static final String DIRETORIO_DATABASE = "src/Infrastructure/Database";
     public String ARQUIVO_JSON;
     private final Class<T> entityType;
 
