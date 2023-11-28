@@ -1,5 +1,7 @@
 package Presentation.Cli;
 
+import Domain.Entities.Cliente;
+import Domain.Entities.Endereco;
 import Domain.Entities.Livro;
 
 import java.util.Scanner;
@@ -15,11 +17,11 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
         System.out.println("[3] - sair");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
-        Scanner input = new Scanner(System.in);
+        Scanner inputMenu = new Scanner(System.in);
         System.out.print(">>> ");
-        int opcao = input.nextInt();
+        int opcaoMenu = inputMenu.nextInt();
 
-        switch (opcao) {
+        switch (opcaoMenu) {
             case 1 -> mostrarMenuAdmin();
             case 2 -> mostrarMenuCliente();
             case 3 -> System.out.println("Saindo...");
@@ -119,11 +121,11 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
         System.out.println("[5] - sair");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
-        Scanner input = new Scanner(System.in);
+        Scanner inputCliente = new Scanner(System.in);
         System.out.print(">>> ");
-        int opcao = input.nextInt();
+        int opcaoCliente = inputCliente.nextInt();
 
-        switch (opcao) {
+        switch (opcaoCliente) {
             case 1 -> {
                 System.out.println("Deseja comprar livro ou revista?");
                 System.out.println("[1] - livro");
@@ -193,29 +195,38 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void adicionarLivro() {
-
-        Scanner inputAdicionar = new Scanner(System.in);
+        Scanner inputAdicionarLivro = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar livro =-=-=-=-=-=-=-=-=");
 
         System.out.println("Digite o título do livro: ");
-        String tituloLivro = inputAdicionar.nextLine();
+        String tituloLivro = inputAdicionarLivro.nextLine();
 
         System.out.println("Digite o gênero do livro: ");
-        String generoLivro = inputAdicionar.nextLine();
+        String generoLivro = inputAdicionarLivro.nextLine();
 
         System.out.println("Digite o autor do livro: ");
-        String autorLivro = inputAdicionar.nextLine();
+        String autorLivro = inputAdicionarLivro.nextLine();
 
         System.out.println("Digite o ano de publicação do livro: ");
-        int anoPublicacaoLivro = inputAdicionar.nextInt();
+        int anoPublicacaoLivro = inputAdicionarLivro.nextInt();
 
         System.out.println("Digite a editora do livro: ");
-        String editoraLivro = inputAdicionar.nextLine();
-
-        System.out.println("Adicionando livro...");
+        String editoraLivro = inputAdicionarLivro.nextLine();
 
         Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
+
+        livroService.criar(livro);
+
+        System.out.println("Quantidade de livros no estoque:");
+        int quantidadeLivro = inputAdicionarLivro.nextInt();
+
+        System.out.println("Preço do livro:");
+        double precoLivro = inputAdicionarLivro.nextDouble();
+
+        ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
+
+        ItemEstoqueService.criar(itemEstoque);
 
     }
 
@@ -226,6 +237,28 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void adicionarRevista() {
+        Scanner inputAdicionarRevista = new Scanner(System.in);
+
+        System.out.println("=-=-=-=-=-=-=-= Adicionar revista =-=-=-=-=-=-=-=-=");
+
+        System.out.println("Digite o título da revista: ");
+        String tituloRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o gênero da revista: ");
+        String generoRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o autor da revista: ");
+        String autorRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Digite o ano de publicação da revista: ");
+        int anoPublicacaoRevista = inputAdicionarRevista.nextInt();
+
+        System.out.println("Digite a editora da revista: ");
+        String editoraRevista = inputAdicionarRevista.nextLine();
+
+        System.out.println("Adicionando revista...");
+
+        Livro revista = new Livro(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
 
     }
 
@@ -236,6 +269,38 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void adicionarCliente() {
+        Scanner inputAdicionarCliente = new Scanner(System.in);
+
+        System.out.println("=-=-=-=-=-=-=-= Adicionar cliente =-=-=-=-=-=-=-=-=");
+
+        System.out.println("Digite o nome do cliente: ");
+        String nomeCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("Digite o email do cliente: ");
+        String emailCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("=-=-=-=-=-=-=-= Endereço do cliente =-=-=-=-=-=-=-");
+        System.out.println("Digite a rua: ");
+        String ruaCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("Digite a cidade: ");
+        String cidadeCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("Digite o estado: ");
+        String estadoCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("Digite o CEP: ");
+        String cepCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("Digite o país: ");
+        String paisCliente = inputAdicionarCliente.nextLine();
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+        System.out.println("Adicionando cliente...");
+
+        Endereco enderecoCliente = new Endereco(ruaCliente, cidadeCliente, estadoCliente, cepCliente, paisCliente);
+        Cliente cliente = new Cliente(nomeCliente, emailCliente, enderecoCliente, null, null);
 
     }
 
@@ -248,13 +313,19 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void comprarLivro() {
-        System.out.println("<----------- Catálogo de livros ----------->");
-        // service - listar dos os livros
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Comprar livro =-=-=-=-=-=-=-=-=");
-        System.out.println("Digite o nome do livro: ");
         Scanner inputComprar = new Scanner(System.in);
+
+        System.out.println("<----------- Catálogo de livros ----------->");
+        // Service - listar todos os livros adicionados pelo ADM
+        System.out.println();
+
+        System.out.println("=-=-=-=-=-=-=-= Comprar livro =-=-=-=-=-=-=-=-=");
+
+        System.out.println("Digite o nome do livro: ");
         String nomeLivro = inputComprar.nextLine();
+
+        System.out.println("Digite o ID do livro: ");
+        String idLivro = inputComprar.nextLine();
 
         System.out.println("Livro comprado!");
 
@@ -262,11 +333,32 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void venderLivro() {
+        System.out.println("<----------- Seus catálogos de livros ----------->");
+        // service - listar dos os livros
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Vender livro =-=-=-=-=-=-=-=-=");
+        System.out.println("Digite o nome do livro: ");
+        Scanner inputVender = new Scanner(System.in);
+        String nomeLivro = inputVender.nextLine();
 
+        System.out.println("Livro vendido!");
     }
 
     @Override
     public void favoritarLivro() {
+        System.out.println("<----------- Seus catálogos de livros ----------->");
+        // Service - listar todos os livros adiconados pelo ADM
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Favoritar livro =-=-=-=-=-=-=-=-=");
+        System.out.println("Digite o nome do livro: ");
+        Scanner inputFavoritar = new Scanner(System.in);
+        String nomeLivro = inputFavoritar.nextLine();
+
+        System.out.println("Livro favoritado!");
+
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Livros favoritados =-=-=-=-=-=-=-=-");
+        // Service - listar dos os livros favoritados pelo cliente
 
     }
 
@@ -285,11 +377,30 @@ public class CliFacade implements Cli, OpcaoAdmin, OpcaoCliente {
 
     @Override
     public void venderRevista() {
+        System.out.println("<----------- Seus catálogos de revistas ----------->");
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Vender revista =-=-=-=-=-=-=-=-=");
+        System.out.println("Digite o nome da revista: ");
+        Scanner inputVender = new Scanner(System.in);
+        String nomeRevista = inputVender.nextLine();
+
+        System.out.println("Revista vendida!");
 
     }
 
     @Override
     public void favoritarRevista() {
+        System.out.println("<----------- Seus catálogos de revistas ----------->");
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Favoritar revista =-=-=-=-=-=-=-=-=");
+        System.out.println("Digite o nome da revista: ");
+        Scanner inputFavoritar = new Scanner(System.in);
+        String nomeRevista = inputFavoritar.nextLine();
 
+        System.out.println("Revista favoritada!");
+
+        System.out.println();
+        System.out.println("=-=-=-=-=-=-=-= Revista favoritadas =-=-=-=-=-=-=-=-");
+        // service - listar revistas favoritadas
     }
 }
