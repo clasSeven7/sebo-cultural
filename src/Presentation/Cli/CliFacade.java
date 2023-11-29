@@ -21,22 +21,31 @@ public class CliFacade {
     }
 
     public void mostrarMenu() {
-        ConsoleHandler.clearConsole();
-        this.mostrarCabecalhoInicial();
-        Scanner inputMenu = new Scanner(System.in);
-        System.out.print(">>> ");
+        int opcaoMenu;
+        do {
+            ConsoleHandler.clearConsole();
+            this.mostrarCabecalhoInicial();
+            Scanner inputMenu = new Scanner(System.in);
+            System.out.print(">>> ");
 
-        int opcaoMenu = inputMenu.nextInt();
+            opcaoMenu = inputMenu.nextInt();
 
-        while (opcaoMenu != 3) {
             switch (opcaoMenu) {
-                case 1 -> mostrarMenuAdmin();
-                case 2 -> mostrarMenuCliente();
-                case 3 -> System.out.println("Saindo...");
+                case 1 -> {
+                    mostrarMenuAdmin();
+                    break;
+                }
+                case 2 -> {
+                    mostrarMenuCliente();
+                    break;
+                }
+                case 3 -> {
+                    System.out.println("Saindo...");
+                    break;
+                }
                 default -> System.out.println("Opcao invalida!");
             }
-        }
-
+        } while (opcaoMenu != 3);
     }
 
     private void mostrarCabecalhoInicial() {
@@ -133,7 +142,6 @@ public class CliFacade {
             }
             case 4 -> {
                 System.out.println("Voltando...");
-                this.mostrarMenu();
             }
         }
     }
@@ -302,7 +310,6 @@ public class CliFacade {
             }
             case 4 -> {
                 System.out.println("Voltando...");
-                mostrarMenu();
             }
         }
     }
