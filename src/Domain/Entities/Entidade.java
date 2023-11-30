@@ -7,6 +7,7 @@ import Shared.Utils.UniqueIdGenerator;
  * Cada entidade possui um identificador único gerado automaticamente ao ser instanciada.
  * A geração do identificador é realizada através do {@code UniqueIdGenerator}.
  */
+
 public abstract class Entidade {
 
     // Campo para armazenar o identificador único da entidade
@@ -16,6 +17,7 @@ public abstract class Entidade {
      * Construtor padrão da classe {@code Entidade}.
      * Ao ser chamado, gera automaticamente um identificador único para a entidade.
      */
+
     public Entidade() {
         this.id = UniqueIdGenerator.generate();
     }
@@ -25,6 +27,7 @@ public abstract class Entidade {
      *
      * @return O identificador único gerado para a entidade.
      */
+
     public String getId() {
         return this.id;
     }

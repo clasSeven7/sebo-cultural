@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Estoque {
-    private ArrayList<ItemEstoque> items = new ArrayList<ItemEstoque>();
+    private final ArrayList<ItemEstoque> items = new ArrayList<ItemEstoque>();
 
     public Estoque() {}
 

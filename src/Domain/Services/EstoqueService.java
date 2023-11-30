@@ -8,7 +8,7 @@ import Domain.Services.Contracts.IEstoqueService;
 import java.util.ArrayList;
 
 public class EstoqueService implements IEstoqueService {
-    private IEstoqueRepository _estoqueRepository;
+    private final IEstoqueRepository _estoqueRepository;
 
     public EstoqueService(IEstoqueRepository estoqueRepository) {
         this._estoqueRepository = estoqueRepository;

@@ -8,17 +8,16 @@ public abstract class ItemBiblioteca extends Entidade {
     private String editora;
     private TipoItemBiblioteca tipo;
 
-
     public ItemBiblioteca() {
         super();
     }
-
 
     /**
      * Obtém o título do item bibliotecário.
      *
      * @return O título do item.
      */
+
     public String getTitulo() {
         return this.titulo;
     }
@@ -28,6 +27,7 @@ public abstract class ItemBiblioteca extends Entidade {
      *
      * @param titulo Novo título do item.
      */
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -41,8 +41,6 @@ public abstract class ItemBiblioteca extends Entidade {
     public String getGenero() {
         return this.genero;
     }
-
-
 
     public void setGenero(String genero) {
         this.genero = genero;

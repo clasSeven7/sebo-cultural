@@ -14,6 +14,7 @@ package Domain.Entities;
  * @param email    O endereço de e-mail do administrador.
  * @param endereco O endereço do administrador.
  */
+
 public class Administrador extends Usuario {
     public Administrador(
             String nome,
@@ -32,6 +33,7 @@ public class Administrador extends Usuario {
      *
      * @return Uma string contendo informações sobre o administrador.
      */
+
     @Override
     public String toString() {
         return "Administrador{" +

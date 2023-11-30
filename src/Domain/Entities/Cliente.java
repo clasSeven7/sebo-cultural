@@ -1,3 +1,10 @@
+package Domain.Entities;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
 /**
  * A classe `Cliente` representa um usuário cliente no sistema,
  * estendendo a classe base `Usuario`.
@@ -5,12 +12,6 @@
  * Esta classe inclui atributos específicos para clientes, como gêneros favoritos
  * e histórico de pedidos.
  */
-package Domain.Entities;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class Cliente extends Usuario {
 
@@ -29,6 +30,7 @@ public class Cliente extends Usuario {
      * @param generosFavoritos Lista de gêneros favoritos do cliente.
      * @param historicoPedidos Lista de pedidos feitos pelo cliente.
      */
+
     public Cliente(
             String nome,
             String email,
@@ -50,6 +52,7 @@ public class Cliente extends Usuario {
      *
      * @return Uma lista de pedidos ordenada por data decrescente.
      */
+
     public ArrayList<Pedido> getHistoricoPedidos() {
         return this.historicoPedidos
                 .stream()
@@ -67,6 +70,7 @@ public class Cliente extends Usuario {
      *
      * @return Lista de gêneros favoritos.
      */
+
     public ArrayList<String> getGenerosFavoritos() {
         return this.generosFavoritos;
     }
@@ -76,6 +80,7 @@ public class Cliente extends Usuario {
      *
      * @param generosFavoritos Lista de gêneros favoritos.
      */
+
     public void setGenerosFavoritos(ArrayList<String> generosFavoritos) {
         this.generosFavoritos = generosFavoritos;
     }
@@ -85,6 +90,7 @@ public class Cliente extends Usuario {
      *
      * @param historicoPedidos Lista de pedidos feitos pelo cliente.
      */
+
     public void setHistoricoPedidos(ArrayList<Pedido> historicoPedidos) {
         this.historicoPedidos = historicoPedidos;
     }
@@ -94,6 +100,7 @@ public class Cliente extends Usuario {
      *
      * @return Uma string contendo informações sobre o cliente.
      */
+
     @Override
     public String toString() {
         return "Cliente{" +
