@@ -83,7 +83,7 @@ public class CliFacade {
         int opcaoAdmin = inputAdmin.nextInt();
 
         switch (opcaoAdmin) {
-            case 1 -> { // excluir
+            case 1 -> { // Adicionar
                 System.out.println("======================================");
                 System.out.println("Deseja ADICIONAR um livro ou uma revista?");
                 System.out.println("[1] - livro");
@@ -95,15 +95,15 @@ public class CliFacade {
                 int opcaoExcluir = inputExcluir.nextInt();
 
                 switch (opcaoExcluir) {
-                    case 1 -> excluirLivro();
-                    case 2 -> excluirRevista();
+                    case 1 -> adicionarLivro();
+                    case 2 -> adicionarRevista();
                     case 3 -> {
                         System.out.println("Voltando...");
                         mostrarMenuAdmin();
                     }
                 }
             }
-            case 2 -> { // Adicionar
+            case 2 -> { // Excluir
                 System.out.println("======================================");
                 System.out.println("Deseja EXCLUIR um livro ou uma revista?");
                 System.out.println("[1] - livro");
@@ -115,8 +115,8 @@ public class CliFacade {
                 int opcaoAdicionar = inputAdicionar.nextInt();
 
                 switch (opcaoAdicionar) {
-                    case 1 -> adicionarLivro();
-                    case 2 -> adicionarRevista();
+                    case 1 -> excluirLivro();
+                    case 2 -> excluirRevista();
                     case 3 -> {
                         System.out.println("Voltando...");
                         mostrarMenuAdmin();
