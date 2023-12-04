@@ -1,0 +1,16 @@
+[
+  {
+    "preco":33,
+    "item":
+    {
+      "tipo":"LIVRO",
+      "anoPublicacao":2020,
+      "genero":"romance",
+      "titulo":"joao",
+      "id":"545ce9fd-a882-43ca-84d0-64b6f1a2cc43",
+      "editora":"",
+      "autor":"joao"
+    },
+    "quantidade":2
+  }
+]

@@ -171,11 +171,13 @@ public class CliFacade {
         System.out.println("Digite a editora do livro: ");
         String editoraLivro = inputAdicionarLivro.nextLine();
 
+        // erro de pular linha
+
         Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
 
-        System.out.println("=====================================");
-
         this._livroService.criar(livro);
+
+        System.out.println("===============================================");
 
         System.out.println("Quantidade de livros no estoque:");
         int quantidadeLivro = inputAdicionarLivro.nextInt();
@@ -217,7 +219,6 @@ public class CliFacade {
         }
 
         System.out.println("Excluindo livro...");
-
     }
 
     private void adicionarRevista() { // TODO: Adicionar revista no estoque
@@ -240,13 +241,13 @@ public class CliFacade {
         System.out.println("Digite a editora da revista: ");
         String editoraRevista = inputAdicionarRevista.nextLine();
 
-        System.out.println("Adicionando revista...");
+        // erro de pular linha
 
         Revista revista = new Revista(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
 
-        System.out.println("=====================================");
-
         this._revistaService.criar(revista);
+
+        System.out.println("=====================================");
 
         System.out.println("Quantidade de revistas no estoque:");
         int quantidadeRevista = inputAdicionarRevista.nextInt();
