@@ -9,7 +9,7 @@
   
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/clasSeven7/sebo-cultural.svg" />
 
-  <a href="https://github.com/clasSeven7/sebo-cultural/commits/master">
+  <a href="https://github.com/clasSeven7/sebo-cultural/commits/main">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/clasSeven7/sebo-cultural.svg" />
   </a>
   
