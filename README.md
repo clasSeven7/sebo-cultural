@@ -28,14 +28,15 @@ Esse é o repositório do projeto **Sebo Cultural** da disciplina de POO do curs
 
 ###
 
-**sfdsaf**
-
-**✏️ Linguagens:**
+**✏️ Linguagem:**
 
 - [Java](https://docs.oracle.com/javase/8/docs/api/)
 
-**🚀 Tecnologias:**
+**🪛 Ferramentas:**
 
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [GitHub](https://github.com)
+
+**🚀 Tecnologia:**
+
 - [Git](https://git-scm.com)
