@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Database/itemestoque.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Database/livro.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Infrastructure/Database/revista.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/Contracts/IRevistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/Contracts/IRevistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Services/RevistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Services/RevistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/OpcaoAdmin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/OpcaoCliente.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +40,9 @@
     <setting file="file://$PROJECT_DIR$/src/Domain/Entities/ItemBiblioteca.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/testes/AdministradorTest.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -56,7 +57,15 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RunManager">
@@ -76,33 +85,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2bb60f80-2b22-4cb5-9095-eb35bae887da" name="Changes" comment="" />
+      <changelist id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="" />
       <created>1701196978977</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701196978977</updated>
+      <workItem from="1701357173447" duration="8165000" />
+      <workItem from="1701451147222" duration="79000" />
+      <workItem from="1701451242055" duration="1186000" />
+      <workItem from="1701638271520" duration="1770000" />
+      <workItem from="1701690515870" duration="1656000" />
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Infrastructure/LivroRepository.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Infrastructure/JSONRepository.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Shared/Utils/ConsoleHandler.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
