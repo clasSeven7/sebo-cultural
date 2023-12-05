@@ -40,7 +40,7 @@ O **Sebo Cultural** é um sistema simples de gerenciamento para uma loja de livr
 
 #### 💻 Configuração do Ambiente
 
-1. _Clone o repositório:_ `git clone https://github.com/seu-usuario/sebo-cultural-java-poo.git`
+1. _Clone o repositório:_ `git clone https://github.com/seu-usuario/sebo-cultural.git`
 2. _Abra o projeto na sua IDE preferida._
 3. _Execute a aplicação._
 
