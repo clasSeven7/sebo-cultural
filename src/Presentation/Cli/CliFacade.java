@@ -39,27 +39,20 @@ public class CliFacade {
             switch (opcaoMenu) {
                 case 1 -> {
                     mostrarMenuAdmin();
-                    break;
                 }
                 case 2 -> {
-                    mostrarMenuCliente();
-                    break;
-                }
-                case 3 -> {
                     System.out.println("Saindo...");
-                    break;
                 }
                 default -> System.out.println("Opcão inválida!");
             }
-        } while (opcaoMenu != 3);
+        } while (opcaoMenu != 2);
     }
 
     private void mostrarCabecalhoInicial() { // TODO: Implementar cabeçalho inicial
         this.mostrarTitulo();
         System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - administrador");
-        System.out.println("[2] - cliente");
-        System.out.println("[3] - sair");
+        System.out.println("[2] - sair");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
 
@@ -176,11 +169,7 @@ public class CliFacade {
         System.out.println("Digite a editora do livro: ");
         String editoraLivro = inputAdicionarLivro.nextLine();
 
-        // erro de pular linha
-
         Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
-
-        this._livroService.criar(livro);
 
         System.out.println("===============================================");
 
@@ -193,6 +182,7 @@ public class CliFacade {
         ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
         ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
         itemsEstoque.add(itemEstoque);
+        this._livroService.criar(livro);
         this._estoqueService.salvar(itemsEstoque);
 
         System.out.println("O Livro foi Adicionado com sucesso!");
@@ -209,21 +199,16 @@ public class CliFacade {
 
         System.out.println("=-=-=-=-=-=-=-= Excluir livro =-=-=-=-=-=-=-=-=");
 
-        System.out.println("Digite o nome do livro: ");
-        String nomeLivro = inputExcluirLivro.nextLine();
-
         System.out.println("Digite o ID do livro: ");
         String idLivro = inputExcluirLivro.nextLine();
-
         this._livroService.deletar(idLivro);
+        System.out.println("Livro excluido...");
 
         System.out.println("<------------ Catálogo de livros Atualizadas ----------->");
         var livrosAtualizados = this._livroService.buscar();
         for (Livro livro:livrosAtualizados) {
             System.out.println(livro.toString());
         }
-
-        System.out.println("Excluindo livro...");
     }
 
     private void adicionarRevista() { // TODO: Adicionar revista no estoque
@@ -246,11 +231,7 @@ public class CliFacade {
         System.out.println("Digite a editora da revista: ");
         String editoraRevista = inputAdicionarRevista.nextLine();
 
-        // erro de pular linha
-
         Revista revista = new Revista(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
-
-        this._revistaService.criar(revista);
 
         System.out.println("=====================================");
 
@@ -263,12 +244,14 @@ public class CliFacade {
         ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
         ItemEstoque itemEstoque = new ItemEstoque(revista, quantidadeRevista, precoRevista);
         itemsEstoque.add(itemEstoque);
+
+        this._revistaService.criar(revista);
         this._estoqueService.salvar(itemsEstoque);
 
         System.out.println("A Revista foi Adicionada com sucesso!");
     }
 
-    private void excluirRevista() { // TODO: Excluir revista no estoque
+    private void excluirRevista() {
         Scanner inputExcluirRevista = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de revistas ----------->");
@@ -278,9 +261,6 @@ public class CliFacade {
         }
 
         System.out.println("=-=-=-=-=-=-=-= Excluir revista =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome da revista: ");
-        String nomeRevista = inputExcluirRevista.nextLine();
 
         System.out.println("Digite o ID da revista: ");
         String idRevista = inputExcluirRevista.nextLine();
@@ -327,9 +307,10 @@ public class CliFacade {
         System.out.println("Adicionando cliente...");
 
         Endereco enderecoCliente = new Endereco(ruaCliente, cidadeCliente, estadoCliente, cepCliente, paisCliente);
-        Cliente cliente = new Cliente(nomeCliente, emailCliente, enderecoCliente, null, null);
+        Cliente cliente = new Cliente(nomeCliente, emailCliente, enderecoCliente);
 
-        // Service de Cliente - criar cliente
+        this._clienteService.criar(cliente);
+        System.out.println("O Cliente foi adicionado com sucesso!");
     }
 
     private void excluirCliente() { // TODO: Excluir cliente
@@ -337,215 +318,22 @@ public class CliFacade {
 
         System.out.println("<----------- Catálogo de clientes ----------->");
 
-        // Service de Cliente - listar todos os clientes
+        var clientes = this._clienteService.buscar();
+        for (Cliente cliente:clientes) {
+            System.out.println(cliente.toString());
+        }
 
         System.out.println("=-=-=-=-=-=-=-= Excluir cliente =-=-=-=-=-=-=-=-=");
 
-        System.out.println("Digite o nome do cliente: ");
-        String nomeCliente = inputExcluirCliente.nextLine();
-
         System.out.println("Digite o ID do cliente: ");
         String idCliente = inputExcluirCliente.nextLine();
-
+        this._clienteService.deletar(idCliente);
         System.out.println("<------------ Catálogo de clientes Atualizadas ----------->");
-        // Service de Cliente - listar todos os clientes
-
-        System.out.println("Excluindo cliente...");
-
-        // Service de Cliente - criar cliente
-
-    }
-
-    // ============== AREA DO CLIENTE ====================
-
-    private void mostrarMenuCliente() { // TODO: Implementar menu do cliente
-        ConsoleHandler.clearConsole();
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Menu do cliente =-=-=-=-=-=-=-=-=");
-        System.out.println("[1] - comprar");
-        System.out.println("[2] - favoritar");
-        System.out.println("[3] - vender");
-        System.out.println("[4] - voltar");
-        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-
-        Scanner inputCliente = new Scanner(System.in);
-        System.out.print(">>> ");
-        int opcaoCliente = inputCliente.nextInt();
-
-        switch (opcaoCliente) {
-            case 1 -> {
-                System.out.println("Deseja comprar livro ou revista?");
-                System.out.println("[1] - livro");
-                System.out.println("[2] - revista");
-                System.out.println("[3] - voltar");
-
-                Scanner inputComprar = new Scanner(System.in);
-                System.out.print(">>> ");
-                int opcaoComprar = inputComprar.nextInt();
-
-                switch (opcaoComprar) {
-                    case 1 -> comprarLivro();
-                    case 2 -> comprarRevista();
-                    case 3 -> {
-                        System.out.println("Voltando...");
-                        mostrarMenuCliente();
-                    }
-                }
-            }
-            case 2 -> {
-                System.out.println("Deseja favoritar livro ou revista?");
-                System.out.println("[1] - livro");
-                System.out.println("[2] - revista");
-                System.out.println("[3] - voltar");
-
-                Scanner inputFavoritar = new Scanner(System.in);
-                System.out.print(">>> ");
-                int opcaoFavoritar = inputFavoritar.nextInt();
-
-                switch (opcaoFavoritar) {
-                    case 1 -> favoritarLivro();
-                    case 2 -> favoritarRevista();
-                    case 3 -> {
-                        System.out.println("Voltando...");
-                        mostrarMenuCliente();
-                    }
-                }
-            }
-            case 3 -> {
-                System.out.println("Deseja vender livro ou revista?");
-                System.out.println("[1] - livro");
-                System.out.println("[2] - revista");
-                System.out.println("[3] - voltar");
-
-                Scanner inputVender = new Scanner(System.in);
-                System.out.print(">>> ");
-                int opcaoVender = inputVender.nextInt();
-
-                switch (opcaoVender) {
-                    case 1 -> venderLivro();
-                    case 2 -> venderRevista();
-                    case 3 -> {
-                        System.out.println("Voltando...");
-                        mostrarMenuCliente();
-                    }
-                }
-            }
-            case 4 -> {
-                System.out.println("Voltando...");
-            }
-        }
-    }
-
-    // ============== AREA DO CLIENTE - SERVICE ====================
-
-    private void comprarLivro() { // TODO: Comprar livro
-        Scanner inputComprar = new Scanner(System.in);
-
-        System.out.println("<----------- Catálogo de livros ----------->");
-        var livrosAtuais = this._livroService.buscar();
-        for (Livro livro:livrosAtuais) {
-            System.out.println(livro.toString());
+        clientes = this._clienteService.buscar();
+        for (Cliente cliente:clientes) {
+            System.out.println(cliente.toString());
         }
 
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Comprar livro =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome do livro: ");
-        String nomeLivro = inputComprar.nextLine();
-
-        System.out.println("Digite o ID do livro: ");
-        String idLivro = inputComprar.nextLine();
-
-        // service - comprar livro
-
-        System.out.println("Livro comprado!");
-
-    }
-
-    private void venderLivro() { // TODO: Vender livro
-        System.out.println("<----------- Seus catálogos de livros ----------->");
-        // service - listar livros comprados por voce
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Vender livro =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome do livro: ");
-        Scanner inputVender = new Scanner(System.in);
-        String nomeLivro = inputVender.nextLine();
-
-        System.out.println("Livro vendido!");
-    }
-
-    private void favoritarLivro() { // TODO: Favoritar livro
-        System.out.println("<----------- Seus catálogos de livros ----------->");
-        // service - listar livros favoritos
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Favoritar livro =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome do livro: ");
-        Scanner inputFavoritar = new Scanner(System.in);
-        String nomeLivro = inputFavoritar.nextLine();
-
-        System.out.println("Livro favoritado!");
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Livros favoritados =-=-=-=-=-=-=-=-");
-        // service - listar livros favoritados
-
-    }
-
-    private void comprarRevista() { // TODO: Comprar revista
-        System.out.println("<----------- Catálogo de revistas ----------->");
-        var revistasAtuais = this._revistaService.buscar();
-        for (Revista revista:revistasAtuais) {
-            System.out.println(revista.toString());
-        }
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Comprar revista =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome da revista: ");
-        Scanner inputComprar = new Scanner(System.in);
-        String nomeRevista = inputComprar.nextLine();
-
-        System.out.println("Revista comprada!");
-
-    }
-
-    private void venderRevista() { // TODO: Vender revista
-        System.out.println("<----------- Seus catálogos de revistas ----------->");
-        var revistasAtuais = this._revistaService.buscar();
-        for (Revista revista:revistasAtuais) {
-            System.out.println(revista.toString());
-        }
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Vender revista =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome da revista: ");
-        Scanner inputVender = new Scanner(System.in);
-        String nomeRevista = inputVender.nextLine();
-
-        System.out.println("Revista vendida!");
-
-    }
-
-    private void favoritarRevista() { // TODO: Favoritar revista
-        System.out.println("<----------- Seus catálogos de revistas ----------->");
-        // service - listar revistas favoritas
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Favoritar revista =-=-=-=-=-=-=-=-=");
-
-        System.out.println("Digite o nome da revista: ");
-        Scanner inputFavoritar = new Scanner(System.in);
-        String nomeRevista = inputFavoritar.nextLine();
-
-        System.out.println("Revista favoritada!");
-
-        System.out.println();
-        System.out.println("=-=-=-=-=-=-=-= Revista favoritadas =-=-=-=-=-=-=-=-");
-        // service - listar revistas favoritadas
+        System.out.println("Cliente excluido com sucesso!...");
     }
 }
