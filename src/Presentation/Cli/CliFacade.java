@@ -37,12 +37,8 @@ public class CliFacade {
             opcaoMenu = inputMenu.nextInt();
 
             switch (opcaoMenu) {
-                case 1 -> {
-                    mostrarMenuAdmin();
-                }
-                case 2 -> {
-                    System.out.println("Saindo...");
-                }
+                case 1 -> mostrarMenuAdmin();
+                case 2 -> System.out.println("Saindo...");
                 default -> System.out.println("Opcão inválida!");
             }
         } while (opcaoMenu != 2);
@@ -141,9 +137,7 @@ public class CliFacade {
                     }
                 }
             }
-            case 4 -> {
-                System.out.println("Voltando...");
-            }
+            case 4 -> System.out.println("Voltando...");
         }
     }
 
