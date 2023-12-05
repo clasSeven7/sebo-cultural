@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="" />
+=======
+    <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/cliente.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/itemestoque.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/livro.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/revista.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" afterDir="false" />
+    </list>
+>>>>>>> 50a25dab0c883d0147cddff7729e2d6c4a8861dc
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -31,11 +31,11 @@ public class ClienteRepository extends JSONRepository<Cliente> implements IClien
         this.criar(cliente);
     }
 
-
     @Override
     protected Cliente criarInstanciaAPartirDoJson(JSONObject jsonObject) {
         var enderecoObj = jsonObject.getJSONObject("endereco");
         return new Cliente(
+                jsonObject.getString("id"),
                 jsonObject.getString("nome"),
                 jsonObject.getString("email"),
                 new Endereco(

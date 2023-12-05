@@ -16,6 +16,23 @@ public class Revista extends ItemBiblioteca {
         this.setEditora(editora);
     }
 
+    public Revista(
+            String id,
+            String titulo,
+            String genero,
+            String autor,
+            int anoPublicacao,
+            String editora
+    ) {
+        this.setId(id);
+        this.setTipo(TipoItemBiblioteca.REVISTA);
+        this.setTitulo(titulo);
+        this.setGenero(genero);
+        this.setAutor(autor);
+        this.setAnoPublicacao(anoPublicacao);
+        this.setEditora(editora);
+    }
+
     @Override
     public String toString() {
         return "Revista{" +

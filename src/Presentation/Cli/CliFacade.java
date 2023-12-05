@@ -26,7 +26,7 @@ public class CliFacade {
         this._clienteService = clienteService;
     }
 
-    public void mostrarMenu() { // TODO: Implementar menu
+    public void mostrarMenu() {
         int opcaoMenu;
         do {
             ConsoleHandler.clearConsole();
@@ -44,7 +44,7 @@ public class CliFacade {
         } while (opcaoMenu != 2);
     }
 
-    private void mostrarCabecalhoInicial() { // TODO: Implementar cabeçalho inicial
+    private void mostrarCabecalhoInicial() {
         this.mostrarTitulo();
         System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - administrador");
@@ -52,7 +52,7 @@ public class CliFacade {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
 
-    private void mostrarTitulo() { // TODO: Implementar titulo
+    private void mostrarTitulo() {
         System.out.println();
         System.out.println("\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFB\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B \uD83C\uDDF8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF4\u200B\u200B\u200B\u200B\u200B \uD83C\uDDE8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF9\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B");
         System.out.println();
@@ -62,7 +62,7 @@ public class CliFacade {
 
     // ============== AREA DO ADMINISTRADOR ====================
 
-    private void mostrarMenuAdmin() { // TODO: Implementar menu do administrador
+    private void mostrarMenuAdmin() {
         ConsoleHandler.clearConsole();
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Menu do administrador =-=-=-=-=-=-=-=-=");
@@ -70,6 +70,7 @@ public class CliFacade {
         System.out.println("[2] - excluir");
         System.out.println("[3] - cliente");
         System.out.println("[4] - voltar");
+        System.out.println("[5] - Mostrar todos os dados");
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 
         Scanner inputAdmin = new Scanner(System.in);
@@ -137,13 +138,19 @@ public class CliFacade {
                     }
                 }
             }
-            case 4 -> System.out.println("Voltando...");
+            case 4 -> {
+                System.out.println("Voltando...");
+            }
+            case 5 -> {
+                this.mostrarTodosOsDados();
+            }
+            default -> System.out.println("Opcao Invalida!");
         }
     }
 
     // ============== AREA DO ADMINISTRADOR - SERVICE ====================
 
-    private void adicionarLivro() { // TODO: Adicionar livro no estoque
+    private void adicionarLivro() {
         Scanner inputAdicionarLivro = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar livro =-=-=-=-=-=-=-=-=");
@@ -159,13 +166,10 @@ public class CliFacade {
 
         System.out.println("Digite o ano de publicação do livro: ");
         int anoPublicacaoLivro = inputAdicionarLivro.nextInt();
+        inputAdicionarLivro.nextLine();
 
         System.out.println("Digite a editora do livro: ");
         String editoraLivro = inputAdicionarLivro.nextLine();
-
-        Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
-
-        System.out.println("===============================================");
 
         System.out.println("Quantidade de livros no estoque:");
         int quantidadeLivro = inputAdicionarLivro.nextInt();
@@ -174,6 +178,7 @@ public class CliFacade {
         double precoLivro = inputAdicionarLivro.nextDouble();
 
         ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
+        Livro livro = new Livro(tituloLivro, generoLivro, autorLivro, anoPublicacaoLivro, editoraLivro);
         ItemEstoque itemEstoque = new ItemEstoque(livro, quantidadeLivro, precoLivro);
         itemsEstoque.add(itemEstoque);
         this._livroService.criar(livro);
@@ -182,7 +187,7 @@ public class CliFacade {
         System.out.println("O Livro foi Adicionado com sucesso!");
     }
 
-    private void excluirLivro() { // TODO: Excluir livro no estoque
+    private void excluirLivro() { 
         Scanner inputExcluirLivro = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de livros ----------->");
@@ -205,7 +210,7 @@ public class CliFacade {
         }
     }
 
-    private void adicionarRevista() { // TODO: Adicionar revista no estoque
+    private void adicionarRevista() {
         Scanner inputAdicionarRevista = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar revista =-=-=-=-=-=-=-=-=");
@@ -221,13 +226,10 @@ public class CliFacade {
 
         System.out.println("Digite o ano de publicação da revista: ");
         int anoPublicacaoRevista = inputAdicionarRevista.nextInt();
+        inputAdicionarRevista.nextLine();
 
         System.out.println("Digite a editora da revista: ");
         String editoraRevista = inputAdicionarRevista.nextLine();
-
-        Revista revista = new Revista(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
-
-        System.out.println("=====================================");
 
         System.out.println("Quantidade de revistas no estoque:");
         int quantidadeRevista = inputAdicionarRevista.nextInt();
@@ -236,6 +238,7 @@ public class CliFacade {
         double precoRevista = inputAdicionarRevista.nextDouble();
 
         ArrayList<ItemEstoque> itemsEstoque = new ArrayList<>();
+        Revista revista = new Revista(tituloRevista, generoRevista, autorRevista, anoPublicacaoRevista, editoraRevista);
         ItemEstoque itemEstoque = new ItemEstoque(revista, quantidadeRevista, precoRevista);
         itemsEstoque.add(itemEstoque);
 
@@ -260,6 +263,7 @@ public class CliFacade {
         String idRevista = inputExcluirRevista.nextLine();
 
         this._revistaService.deletar(idRevista);
+        System.out.println("A Revista foi excluida com sucesso!");
 
         System.out.println("<------------ Catálogo de revistas Atualizadas ----------->");
         var revistasAtualizadas = this._revistaService.buscar();
@@ -268,7 +272,7 @@ public class CliFacade {
         }
     }
 
-    private void adicionarCliente() { // TODO: Adicionar cliente
+    private void adicionarCliente() {
         Scanner inputAdicionarCliente = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar cliente =-=-=-=-=-=-=-=-=");
@@ -296,18 +300,18 @@ public class CliFacade {
         System.out.println("Digite o país: ");
         String paisCliente = inputAdicionarCliente.nextLine();
 
-        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-
-        System.out.println("Adicionando cliente...");
-
         Endereco enderecoCliente = new Endereco(ruaCliente, cidadeCliente, estadoCliente, cepCliente, paisCliente);
         Cliente cliente = new Cliente(nomeCliente, emailCliente, enderecoCliente);
+
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+
+        System.out.println("Cliente adicionado!..");
 
         this._clienteService.criar(cliente);
         System.out.println("O Cliente foi adicionado com sucesso!");
     }
 
-    private void excluirCliente() { // TODO: Excluir cliente
+    private void excluirCliente() { 
         Scanner inputExcluirCliente = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de clientes ----------->");
@@ -321,13 +325,41 @@ public class CliFacade {
 
         System.out.println("Digite o ID do cliente: ");
         String idCliente = inputExcluirCliente.nextLine();
+
         this._clienteService.deletar(idCliente);
+        System.out.println("Cliente excluido com sucesso!...");
+
+
         System.out.println("<------------ Catálogo de clientes Atualizadas ----------->");
         clientes = this._clienteService.buscar();
         for (Cliente cliente:clientes) {
             System.out.println(cliente.toString());
         }
 
-        System.out.println("Cliente excluido com sucesso!...");
+    }
+
+    private void mostrarTodosOsDados() {
+        System.out.println("<------------ Catálogo de livros Atualizados ----------->");
+        var livros = this._livroService.buscar();
+        for (Livro livro:livros) {
+            System.out.println(livro.toString());
+        }
+
+        System.out.println("\n");
+
+        System.out.println("<------------ Catálogo de revistas Atualizadas ----------->");
+        var revistas = this._revistaService.buscar();
+        for (Revista revista:revistas) {
+            System.out.println(revista.toString());
+        }
+
+        System.out.println("\n");
+
+        System.out.println("<------------ Clientes Atualizados ----------->");
+        var clientes = this._clienteService.buscar();
+
+        for (Cliente cliente:clientes) {
+            System.out.println(cliente.toString());
+        }
     }
 }
