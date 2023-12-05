@@ -47,6 +47,18 @@ public class Cliente extends Usuario {
         this.setHistoricoPedidos(historicoPedidos);
     }
 
+    public Cliente(
+            String nome,
+            String email,
+            Endereco endereco
+    ) {
+        super(); // Chama o construtor da classe base (Usuario).
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setPermissao(PermissaoUsuario.CLIENTE);
+        this.setEndereco(endereco);
+    }
+
     /**
      * Obtém o histórico de pedidos do cliente, ordenado por data de forma decrescente.
      *

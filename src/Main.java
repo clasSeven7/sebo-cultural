@@ -1,7 +1,10 @@
+import Domain.Repositories.IClienteRepository;
 import Domain.Repositories.IEstoqueRepository;
 import Domain.Repositories.ILivroRepository;
 import Domain.Repositories.IRevistaRepository;
 
+import Domain.Services.ClienteService;
+import Domain.Services.Contracts.IClienteService;
 import Domain.Services.Contracts.IEstoqueService;
 import Domain.Services.Contracts.ILivroService;
 import Domain.Services.Contracts.IRevistaService;
@@ -10,6 +13,7 @@ import Domain.Services.EstoqueService;
 import Domain.Services.LivroService;
 import Domain.Services.RevistaService;
 
+import Infrastructure.ClienteRepository;
 import Infrastructure.EstoqueRepository;
 import Infrastructure.LivroRepository;
 import Infrastructure.RevistaRepository;
@@ -27,7 +31,10 @@ public class Main {
         IEstoqueRepository estoqueRepository = new EstoqueRepository();
         IEstoqueService estoqueService = new EstoqueService(estoqueRepository);
 
-        var cli = new CliFacade(livroService, revistaService, estoqueService);
+        IClienteRepository clienteRepository = new ClienteRepository();
+        IClienteService clienteService = new ClienteService(clienteRepository);
+
+        var cli = new CliFacade(livroService, revistaService, estoqueService, clienteService);
         cli.mostrarMenu();
 
         //Remove esses comentarios para testar a persitencia em json

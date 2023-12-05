@@ -1,5 +1,6 @@
 package Presentation.Cli;
 
+import Domain.Services.Contracts.IClienteService;
 import Domain.Services.Contracts.IEstoqueService;
 import Domain.Services.Contracts.ILivroService;
 import Domain.Services.Contracts.IRevistaService;
@@ -14,11 +15,15 @@ public class CliFacade {
     private final ILivroService _livroService;
     private final IRevistaService _revistaService;
     private final IEstoqueService _estoqueService;
+    private final IClienteService _clienteService;
 
-    public CliFacade(ILivroService livroService, IRevistaService revistaService, IEstoqueService estoqueService) {
+    public CliFacade(ILivroService livroService, IRevistaService revistaService,
+                     IEstoqueService estoqueService,
+                     IClienteService clienteService) {
         this._livroService = livroService;
         this._revistaService = revistaService;
         this._estoqueService = estoqueService;
+        this._clienteService = clienteService;
     }
 
     public void mostrarMenu() { // TODO: Implementar menu
