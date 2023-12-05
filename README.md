@@ -51,9 +51,9 @@ O **Sebo Cultural** é um sistema simples de gerenciamento para uma loja de livr
 
 #### ⚙️ Uso
 
-**1.** _Execute a aplicação._
-**2.** _Utilize a interface de linha de comando para interagir com o sistema._
-**3.** _Explore as funcionalidades de cadastro, venda e geração de relatórios._
+1. _Execute a aplicação._
+2. _Utilize a interface de linha de comando para interagir com o sistema._
+3. _Explore as funcionalidades de cadastro, venda e geração de relatórios._
 
 #### 🚀 Tecnologia
 
