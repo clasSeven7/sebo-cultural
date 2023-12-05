@@ -26,7 +26,7 @@ public class CliFacade {
         this._clienteService = clienteService;
     }
 
-    public void mostrarMenu() { // TODO: Implementar menu
+    public void mostrarMenu() {
         int opcaoMenu;
         do {
             ConsoleHandler.clearConsole();
@@ -37,18 +37,14 @@ public class CliFacade {
             opcaoMenu = inputMenu.nextInt();
 
             switch (opcaoMenu) {
-                case 1 -> {
-                    mostrarMenuAdmin();
-                }
-                case 2 -> {
-                    System.out.println("Saindo...");
-                }
+                case 1 -> mostrarMenuAdmin();
+                case 2 -> System.out.println("Saindo...");
                 default -> System.out.println("Opcão inválida!");
             }
         } while (opcaoMenu != 2);
     }
 
-    private void mostrarCabecalhoInicial() { // TODO: Implementar cabeçalho inicial
+    private void mostrarCabecalhoInicial() {
         this.mostrarTitulo();
         System.out.println("=-=-=-=-=-=-=-= Menu de opções =-=-=-=-=-=-=-=-=");
         System.out.println("[1] - administrador");
@@ -56,7 +52,7 @@ public class CliFacade {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
 
-    private void mostrarTitulo() { // TODO: Implementar titulo
+    private void mostrarTitulo() {
         System.out.println();
         System.out.println("\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFB\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEE\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B \uD83C\uDDF8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDEA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF4\u200B\u200B\u200B\u200B\u200B \uD83C\uDDE8\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF9\u200B\u200B\u200B\u200B\u200B\uD83C\uDDFA\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF7\u200B\u200B\u200B\u200B\u200B\uD83C\uDDE6\u200B\u200B\u200B\u200B\u200B\uD83C\uDDF1\u200B\u200B\u200B\u200B\u200B");
         System.out.println();
@@ -66,7 +62,7 @@ public class CliFacade {
 
     // ============== AREA DO ADMINISTRADOR ====================
 
-    private void mostrarMenuAdmin() { // TODO: Implementar menu do administrador
+    private void mostrarMenuAdmin() {
         ConsoleHandler.clearConsole();
         System.out.println();
         System.out.println("=-=-=-=-=-=-=-= Menu do administrador =-=-=-=-=-=-=-=-=");
@@ -154,7 +150,7 @@ public class CliFacade {
 
     // ============== AREA DO ADMINISTRADOR - SERVICE ====================
 
-    private void adicionarLivro() { // TODO: Adicionar livro no estoque
+    private void adicionarLivro() {
         Scanner inputAdicionarLivro = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar livro =-=-=-=-=-=-=-=-=");
@@ -170,6 +166,7 @@ public class CliFacade {
 
         System.out.println("Digite o ano de publicação do livro: ");
         int anoPublicacaoLivro = inputAdicionarLivro.nextInt();
+        inputAdicionarLivro.nextLine();
 
         System.out.println("Digite a editora do livro: ");
         String editoraLivro = inputAdicionarLivro.nextLine();
@@ -190,7 +187,7 @@ public class CliFacade {
         System.out.println("O Livro foi Adicionado com sucesso!");
     }
 
-    private void excluirLivro() { // TODO: Excluir livro no estoque
+    private void excluirLivro() { 
         Scanner inputExcluirLivro = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de livros ----------->");
@@ -213,7 +210,7 @@ public class CliFacade {
         }
     }
 
-    private void adicionarRevista() { // TODO: Adicionar revista no estoque
+    private void adicionarRevista() {
         Scanner inputAdicionarRevista = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar revista =-=-=-=-=-=-=-=-=");
@@ -229,6 +226,7 @@ public class CliFacade {
 
         System.out.println("Digite o ano de publicação da revista: ");
         int anoPublicacaoRevista = inputAdicionarRevista.nextInt();
+        inputAdicionarRevista.nextLine();
 
         System.out.println("Digite a editora da revista: ");
         String editoraRevista = inputAdicionarRevista.nextLine();
@@ -274,7 +272,7 @@ public class CliFacade {
         }
     }
 
-    private void adicionarCliente() { // TODO: Adicionar cliente
+    private void adicionarCliente() {
         Scanner inputAdicionarCliente = new Scanner(System.in);
 
         System.out.println("=-=-=-=-=-=-=-= Adicionar cliente =-=-=-=-=-=-=-=-=");
@@ -313,7 +311,7 @@ public class CliFacade {
         System.out.println("O Cliente foi adicionado com sucesso!");
     }
 
-    private void excluirCliente() { // TODO: Excluir cliente
+    private void excluirCliente() { 
         Scanner inputExcluirCliente = new Scanner(System.in);
 
         System.out.println("<----------- Catálogo de clientes ----------->");

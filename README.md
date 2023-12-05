@@ -30,7 +30,6 @@ O **Sebo Cultural** é um sistema simples de gerenciamento para uma loja de livr
 
 - `Cadastro de Livros:` Adicione informações sobre os livros disponíveis, como título, autor, ano de publicação, etc.
 - `Controle de Estoque:` Acompanhe a quantidade de cópias disponíveis de cada livro.
-- `Venda de Livros:` Registre as vendas e atualize o estoque automaticamente.
 - `Relatórios:` Gere relatórios sobre as vendas, estoque atual, etc.
 
 #### 📦 Pré-requisitos

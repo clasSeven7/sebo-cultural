@@ -6,17 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9167619-34e0-4951-8824-dc57341f3e17" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Entidade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Entidade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Estoque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Entities/Revista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/ClienteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/itemestoque.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Database/itemestoque.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/livro.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Database/livro.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/revista.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/Database/revista.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/EstoqueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/EstoqueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infrastructure/LivroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/cliente.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/itemestoque.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/livro.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infrastructure/Database/revista.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presentation/Cli/CliFacade.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +66,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -103,6 +98,7 @@
       <workItem from="1701451242055" duration="1186000" />
       <workItem from="1701638271520" duration="1770000" />
       <workItem from="1701690515870" duration="1656000" />
+      <workItem from="1701804947851" duration="459000" />
     </task>
     <servers />
   </component>
