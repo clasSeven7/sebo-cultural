@@ -32,12 +32,12 @@ public class EstoqueRepository extends JSONRepository<ItemEstoque> implements IE
         var itemBibliotecaObject = jsonObject.getJSONObject("item");
         var itemBibliotecaType = itemBibliotecaObject.getEnum(TipoItemBiblioteca.class, "tipo");
         var itemBiblioteca = itemBibliotecaType == TipoItemBiblioteca.LIVRO
-                ? new Livro(itemBibliotecaObject.getString("titulo"),
+                ? new Livro(itemBibliotecaObject.getString("id"), itemBibliotecaObject.getString("titulo"),
                     itemBibliotecaObject.getString("genero"),
                     itemBibliotecaObject.getString("autor"),
                     itemBibliotecaObject.getInt("anoPublicacao"),
                     itemBibliotecaObject.getString("editora"))
-                : new Revista(itemBibliotecaObject.getString("titulo"),
+                : new Revista(itemBibliotecaObject.getString("id"), itemBibliotecaObject.getString("titulo"),
                     itemBibliotecaObject.getString("genero"),
                     itemBibliotecaObject.getString("autor"),
                     itemBibliotecaObject.getInt("anoPublicacao"),

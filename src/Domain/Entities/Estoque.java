@@ -27,5 +27,9 @@ public class Estoque {
         return items.stream()
                 .anyMatch(itemEstoque -> Objects.equals(itemEstoque.getItem().getId(), itemBiblioteca.getId()));
     }
+
+    public ArrayList<ItemEstoque> getItems() {
+        return items;
+    }
 }
 

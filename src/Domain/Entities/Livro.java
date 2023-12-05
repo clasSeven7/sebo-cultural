@@ -16,6 +16,24 @@ public class Livro extends ItemBiblioteca {
         this.setEditora(editora);
     }
 
+    public Livro(
+            String id,
+            String titulo,
+            String genero,
+            String autor,
+            int anoPublicacao,
+            String editora
+    ) {
+        this.setId(id);
+        this.setTipo(TipoItemBiblioteca.LIVRO);
+        this.setTitulo(titulo);
+        this.setGenero(genero);
+        this.setAutor(autor);
+        this.setAnoPublicacao(anoPublicacao);
+        this.setEditora(editora);
+    }
+
+
     public Livro(Livro livro, int quantidadeLivro, double precoLivro) {
     }
 

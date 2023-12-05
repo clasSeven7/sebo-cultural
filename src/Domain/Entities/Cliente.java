@@ -59,6 +59,39 @@ public class Cliente extends Usuario {
         this.setEndereco(endereco);
     }
 
+
+    public Cliente(
+            String id,
+            String nome,
+            String email,
+            Endereco endereco
+    ) {
+        super(); // Chama o construtor da classe base (Usuario).
+        this.setId(id);
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setPermissao(PermissaoUsuario.CLIENTE);
+        this.setEndereco(endereco);
+    }
+
+    public Cliente(
+            String id,
+            String nome,
+            String email,
+            Endereco endereco,
+            ArrayList<String> generosFavoritos,
+            ArrayList<Pedido> historicoPedidos
+    ) {
+        super(); // Chama o construtor da classe base (Usuario).
+        this.setId(id);
+        this.setNome(nome);
+        this.setEmail(email);
+        this.setPermissao(PermissaoUsuario.CLIENTE);
+        this.setEndereco(endereco);
+        this.setGenerosFavoritos(generosFavoritos);
+        this.setHistoricoPedidos(historicoPedidos);
+    }
+
     /**
      * Obtém o histórico de pedidos do cliente, ordenado por data de forma decrescente.
      *

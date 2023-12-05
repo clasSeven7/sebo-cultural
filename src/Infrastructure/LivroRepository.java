@@ -30,10 +30,10 @@ public class LivroRepository extends JSONRepository<Livro> implements ILivroRepo
        this.criar(livro);
     }
 
-
     @Override
     protected Livro criarInstanciaAPartirDoJson(JSONObject jsonObject) {
         return new Livro(
+                jsonObject.getString("id"),
                 jsonObject.getString("titulo"),
                 jsonObject.getString("genero"),
                 jsonObject.getString("autor"),
